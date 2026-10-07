@@ -56,7 +56,9 @@ const base=process.env.QA_ORIGIN || 'http://localhost:3128';
   await page.locator('label.filter-choice').filter({hasText:'Mind'}).click(); assert.equal(await page.locator('[data-resource-empty]').isVisible(),true);
   await page.locator('[data-clear-resources]').click(); await page.locator('#resource-query').fill('textile');
   await page.waitForTimeout(250); // Search debounce and URL state.
-  await page.goto(base+'/community/'); assert.equal(await page.locator('[data-submit]').isEnabled(),true);
+  await page.goto(base+'/community/');
+  await page.waitForFunction(()=>!document.querySelector('[data-form-notice]').textContent.includes('Checking'));
+  assert.equal(await page.locator('[data-submit]').isEnabled(),true);
   await page.locator('[data-submit]').click(); assert.equal(await page.locator('[data-form-errors]').isVisible(),true);
   assert.equal(await page.locator('[data-form-errors]').evaluate(n=>n===document.activeElement),true);
   await page.goto(base+'/get-involved/collaborate/'); assert.equal(await page.locator('#involvement-collaborate-interest').inputValue(),'collaborate');

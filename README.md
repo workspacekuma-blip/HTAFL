@@ -44,7 +44,8 @@ Node server remains available; the filesystem/proxy notes below apply to that mo
 The owner is assigned to review community work. The private local
 `npm run email:setup` screen can save both verified sending credentials and a
 salted administrator hash without exposing passwords in chat. Restart or redeploy
-to activate them. No real credentials have been entered yet.
+to activate them. The owner has saved the administrator credentials privately
+and confirmed that the local dashboard opens. Local email delivery is also verified.
 
 The password-protected **Review Studio** at `/admin/` now provides private image
 review, approval, rejection/withdrawal and notification retries. Start with
@@ -81,4 +82,5 @@ are retained; the current website does not load the old room renderer.
 
 The [publication review](docs/publication-readiness.md) records the latest
 verification, applied licensed resources and private setup still required before
-a full public launch.
+a full public launch. Use the [phone launch checks](docs/phone-launch-checks.md)
+on actual Android and iPhone devices once the HTTPS deployment is ready.

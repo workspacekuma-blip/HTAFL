@@ -3,7 +3,15 @@
 The owner chose Netlify and asked for the best free option. The prepared target
 is its Free plan with modern Functions and private Blobs, retaining the static
 HTML/CSS/JavaScript frontend and shared Express backend. No paid plan, extra
-credit purchase, remote project or live deployment has been created here.
+credit purchase or paid upgrade has been made. The owner authorized a new free
+site. `https://htafl-890.netlify.app` has been created in the HTAFL Free team,
+with automatic top-ups disabled. Its production mail/admin environment is saved,
+the public GitHub source is connected with a read-only deploy key and push webhook.
+A Linux production build succeeded. Public HTTPS, HTTP-to-HTTPS redirection,
+15 page routes, canonical metadata, the private file boundary and protected
+administrator API pass live checks. A private test upload was converted and
+stored in production Blobs, stayed unpublished, and sent its notification.
+Persistence across redeploy and test-data cleanup are being verified separately.
 
 Netlify currently lists a 300-credit monthly Free limit, including Functions and
 Blob storage. This is a limited free tier, not unlimited hosting. Check usage in
@@ -11,8 +19,8 @@ the account; do not enable a paid upgrade or auto-recharge without owner approva
 
 ## Deploy through the actual Netlify account
 
-1. Supply the exact site URL/site identity and connect/import this repository in
-   Netlify. The current `.app.netlify` answer identifies the provider, not a site.
+1. Use the newly created site `https://htafl-890.netlify.app` and its Netlify
+   project `6a177d72-f16f-4aeb-bbfb-9455d9ef5956`.
    Local changes must reach the connected repository before Netlify can build them.
    Do not drag-and-drop `dist` alone: that would omit the backend Functions.
 2. Keep the Free plan. `netlify.toml` selects Node 24, `npm run build`, the isolated
@@ -26,7 +34,10 @@ the account; do not enable a paid upgrade or auto-recharge without owner approva
    `COMMUNITY_REVIEWER=HTAFL owner`. All deliveries go to htafl@africamail.com;
    Sending uses dyrctkm@gmail.com after its Gmail App Password is verified.
    Copy the hash, never a plain admin passphrase.
-   Never upload `.env` as a public file or paste these secrets in chat.
+   Never upload `.env` as a public file or paste these secrets in chat. The Free
+   team's environment is saved with all supported scopes because granular scopes
+   are not available on this plan; application packaging excludes configuration
+   and the build does not print private values. Mail/admin values are production-only.
 4. Set `PUBLIC_ORIGIN` to the actual HTTPS site origin, with Build and Functions
    scope. The build can also use Netlify's provided `URL`; runtime can use
    `context.site.url`. Do not copy the localhost origin into production.
@@ -83,9 +94,12 @@ storage, and the modern Request/Response boundary preserves the existing Express
 validation and sign-in behavior. These are not live Netlify integration tests.
 The public package and existing site are checked locally. Gmail authentication
 and one controlled local form delivery now pass; the owner confirmed inbox receipt.
-Live Netlify account access, deployment, HTTPS certificate and remote persistence
-have not been verified. Administrator setup and actual site/account access are
-still required.
+Netlify account access and Free plan have been verified; site creation, private
+production configuration and Linux deployment succeeded. The owner saved the
+administrator passphrase privately and confirmed local sign-in. Live HTTPS and
+public/backend checks pass. The owner also confirmed that the live administrator
+dashboard opens. Actual-phone results and live notification inbox receipt are
+pending. Do not confuse these with local checks.
 
 Official references: [Netlify pricing](https://www.netlify.com/pricing/),
 [modern Functions](https://docs.netlify.com/build/functions/api/),

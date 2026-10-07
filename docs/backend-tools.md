@@ -61,20 +61,24 @@ SameSite=Strict cookies scoped to `/admin`; production uses Secure cookies and
 refuses HTTP sign-in. Sessions expire after 30 minutes idle or 8 hours total.
 Mutations check the request origin and a per-session CSRF token. Sign-in is
 limited to five attempts per IP in 15 minutes. In-progress actions on a work are
-serialized within the process. No password or session token enters URLs or
+serialized within the local process. Netlify uses conditional private Blobs writes
+for shared sessions, throttling and moderation locks across function instances.
+No password or session token enters URLs or
 browser storage.
 
 Set `NODE_ENV=production`, an HTTPS `PUBLIC_ORIGIN`, and the correct trusted
 proxy hop count on the actual host. Upload storage must be private and persistent.
-Sessions, login limits and submission locks are process-local: use one Node
-instance for this implementation. A multi-instance deployment needs shared
-storage, sessions and rate limits. Server restarts require operators to sign in
-again. Restrict host access and protect environment files and backups.
+Sessions, login limits and submission locks are process-local on the standalone
+Node server: use one instance in that mode. The Netlify adapter uses persistent
+private state instead. Local server restarts require operators to sign in again.
+Restrict host access and protect environment files and backups.
 
 `GET /healthz` is a minimal liveness endpoint; it does not claim email readiness.
 The authenticated dashboard reports queue/storage/configuration state. Use the
 host readiness command to verify SMTP authentication, then make a controlled
-delivery test before public launch. No real email was sent in this implementation.
+delivery test before public launch. The owner confirmed the local participation
+test was received. A deployed private upload notification was accepted by SMTP;
+live inbox receipt must also be confirmed.
 
 ## Verification
 

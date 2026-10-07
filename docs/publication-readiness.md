@@ -1,7 +1,7 @@
 # HTAFL website review — 7 October 2026
 
-**Local website and real email delivery pass review. Public hosting and
-administrator activation remain incomplete.** Branding, layout and copy were
+**Local website, real email delivery and owner-confirmed administrator sign-in
+pass review. Live hosting/storage and actual-phone checks remain incomplete.** Branding, layout and copy were
 preserved. No new reproducible website defect was found. The browser review
 previously assumed email was always unconfigured; its test now covers the live
 availability state and an isolated unavailable state without sending test-fixture
@@ -38,18 +38,22 @@ inbox. No password is recorded here, in browser code or in Git.
 
 ## Still required for public launch
 
-1. Set the administrator passphrase privately and activate sign-in. The owner is
-   assigned as reviewer, but live administrator credentials remain absent.
-2. Connect this GitHub repository to the actual Netlify site and configure its
-   private environment. Source is pushed; the real domain/site identity and live
-   deployment are not available here. See [Netlify launch](netlify-launch.md).
+1. Administrator access is configured. The owner confirmed that both local and
+   deployed dashboards open. Reviewer: HTAFL owner. Keep credentials private.
+2. Complete and verify the new free Netlify deployment. The new site is
+   `https://htafl-890.netlify.app`, linked to the public GitHub source with private
+   production settings saved. The Linux build succeeded; live HTTPS, HTTP
+   redirection, 15 routes, canonical metadata and the private file boundary pass.
+   A private upload was converted and stored without publication. Verification
+   across redeploy and cleanup is in progress. See [Netlify launch](netlify-launch.md).
 3. Verify HTTPS, domain metadata, native-image execution and persistent private
    Blobs on the deployed site. Test an upload across redeploy, approval and
    withdrawal; arrange protected backups and expired-state housekeeping.
 4. Confirm operational privacy/retention procedures and verified guardian consent
    before accepting children's personal submissions. A general consent checkbox
    is not a guardian-verification workflow. See [privacy operations](privacy-operations.md).
-5. Test the deployed site on actual iOS/Safari and Android/Chrome devices.
+5. Test the deployed site on the owner's actual iOS/Safari and Android/Chrome
+   devices using [phone launch checks](phone-launch-checks.md).
 
 Bank instructions remain owner-supplied and transfers are not automatically
 processed or confirmed. Crypto and merchandise are intentional coming-soon
