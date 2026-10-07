@@ -1,34 +1,33 @@
 # Private email delivery setup — 7 October 2026
 
-HTAFL uses only **htafl@africamail.com** as its contact, sending account and form
-recipient. The mailbox is hosted by mail.com. No alternative sender or fallback
-email provider is configured.
+Public contact and form destination: **htafl@africamail.com**.
+Sending account: **dyrctkm@gmail.com**, chosen by the owner.
+No other sender is configured. The recipient mailbox does not need SMTP access
+to receive messages sent through this Gmail account.
 
-The owner confirmed this account lacks mail.com Premium/SMTP access. Mail.com’s
-current documentation says SMTP requires Premium. Delivery therefore remains
-unavailable until SMTP access is enabled for this account and verified privately.
-No subscription has been purchased or changed. The existing contact links still
-open the user's email application; uploads remain stored privately for review.
+Run `npm run email:setup` and open the printed local address. On the sending
+Google account, enable two-step verification and create a Google App Password.
+Enter that credential only in the masked local field, never in chat. Do not use
+the normal account password. Some Google account configurations restrict App
+Passwords; consult the official account guidance if the option is unavailable.
 
-Run `npm run email:setup` and open the local address printed on your computer.
-After enabling SMTP, enter the provider's credential only in the masked field.
-Use an application-specific password when two-factor authentication is enabled.
-The helper checks encrypted `smtp.mail.com:465` authentication without sending
-mail, then saves private Git-ignored settings. It preserves administrator settings,
-clears the browser credential field and closes after 30 minutes.
+The helper verifies encrypted `smtp.gmail.com:465` authentication without sending
+mail, then saves private Git-ignored settings. It preserves administrator details,
+clears the browser credential field and closes after 30 minutes. The setup also
+lets the owner privately configure reviewer access; only a salted hash is saved.
 
-The same account must be configured in the host's private Functions environment:
-`SMTP_HOST=smtp.mail.com`, `SMTP_PORT=465`, `SMTP_SECURE=true`,
-`SMTP_USER=htafl@africamail.com`, `SMTP_FROM=htafl@africamail.com`, `SMTP_PASS`.
-Port 587 with required STARTTLS is also supported by the backend. The sender and
-host are checked before enabling delivery; incompatible legacy settings cannot
-silently activate another account.
+On Netlify, configure these privately with Functions scope:
+`SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=465`, `SMTP_SECURE=true`,
+`SMTP_USER=dyrctkm@gmail.com`, `SMTP_FROM=dyrctkm@gmail.com`, and verified `SMTP_PASS`.
+The application delivers to htafl@africamail.com and retains each enquirer's
+validated Reply-To address. The backend also supports port 587 with required
+STARTTLS. Other account/provider settings do not enable sending.
 
 Restart/redeploy, run `npm run backend:check`, then use `npm run email:test` for
-the authorized participation submission. Confirm inbox receipt independently;
-SMTP acceptance alone does not prove receipt. No real email has been sent.
-See [Netlify launch](netlify-launch.md). Never publish `.env` or send passwords in chat.
+the authorized participation submission. Confirm receipt in the africamail.com
+inbox/spam folder independently; SMTP acceptance alone does not prove receipt.
+No real credential or email has been tested yet. See [Netlify launch](netlify-launch.md).
+Never publish `.env` or send passwords in chat.
 
-Official sources: [mail.com domains](https://www.mail.com/mail/domains/),
-[SMTP settings](https://support.mail.com/premium/imap/server.html),
-[SMTP/Premium and application-password requirements](https://www.mail.com/blog/posts/what-is-imap-pop3/86/).
+Official sources: [Google App Passwords](https://support.google.com/accounts/answer/185833),
+[Nodemailer SMTP transport](https://nodemailer.com/smtp).

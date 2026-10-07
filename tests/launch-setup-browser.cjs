@@ -13,13 +13,13 @@ const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),asse
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
       if(process.env.AXE_SCRIPT){await page.evaluate(fs.readFileSync(process.env.AXE_SCRIPT,'utf8'));const result=await page.evaluate(async()=>(await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}})).violations.map(v=>v.id));assert.deepEqual(result,[]);}
     }
-    await page.getByLabel('Mail.com SMTP credential',{exact:true}).fill('abcdefghijklmnop');await page.getByRole('button',{name:'Verify and save email delivery'}).click();
+    await page.getByLabel('Gmail App Password',{exact:true}).fill('abcdefghijklmnop');await page.getByRole('button',{name:'Verify and save email delivery'}).click();
     await page.waitForFunction(()=>document.querySelector('#setup-status').textContent.includes('verified'));
     assert.equal(await page.locator('#app-password').inputValue(),'');
     await page.getByLabel('New administrator passphrase',{exact:true}).fill('Private browser test passphrase');await page.getByLabel('Repeat passphrase',{exact:true}).fill('Private browser test passphrase');
     await page.getByRole('button',{name:'Save administrator and reviewer'}).click();await page.waitForFunction(()=>document.querySelector('#admin-setup-status').textContent.includes('saved privately'));
     assert.equal(await page.locator('#admin-password').inputValue(),'');assert.equal(await page.locator('#admin-confirmation').inputValue(),'');
     assert.equal(await page.locator('#admin-setup-status').evaluate(n=>n===document.activeElement),true);assert.deepEqual(errors,[]);
-    console.log('Passed private setup layouts/accessibility, mock mail.com save, administrator/reviewer save, cleared secrets and keyboard status focus. No real credential or email used.');
+    console.log('Passed private setup layouts/accessibility, mock Gmail sender save, administrator/reviewer save, cleared secrets and keyboard status focus. No real credential or email used.');
   }finally{await browser.close();await new Promise(resolve=>server.close(resolve));fs.rmSync(directory,{recursive:true,force:true});}
 })().catch(e=>{console.error(e);process.exitCode=1;});

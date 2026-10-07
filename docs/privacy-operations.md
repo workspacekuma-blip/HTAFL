@@ -21,7 +21,7 @@ the current online forms do not implement a verified guardian workflow. A policy
 paragraph or ordinary consent checkbox is not proof of guardian verification.
 Complete this operational safeguard before inviting children to submit directly.
 
-Review Netlify/mail.com terms, actual processing locations and safeguards for any
+Review Netlify/mail.com/Gmail terms, actual processing locations and safeguards for any
 cross-border transfers. Confirm the legal controller's identity if different
 from the owner-provided operator label. This implementation is not a legal
 compliance certification or evidence of regulator registration.

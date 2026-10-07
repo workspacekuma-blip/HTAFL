@@ -3,7 +3,7 @@ import {randomUUID} from 'node:crypto';
 import {createInterface} from 'node:readline/promises';
 import {emitKeypressEvents} from 'node:readline';
 import {hashPassword} from './password.js';
-import {emailAddress,smtpHost} from './email-config.js';
+import {senderAddress,smtpHost} from './email-config.js';
 
 // Secrets are read without terminal echo and never printed or passed as arguments.
 async function secret(prompt) {
@@ -46,10 +46,11 @@ try{
   const mail=await question('Configure email delivery now? [y/N]: ');
   if(mail.toLowerCase()==='y') {
     const host=smtpHost;
-    console.log(`Mail server: ${smtpHost}; account: ${emailAddress}. This mailbox must have SMTP access enabled.`);
+    console.log(`Sending server: ${smtpHost}; account: ${senderAddress}. Use this account’s Gmail App Password.`);
     const port=await question('SMTP port [465]: ') || '465';
-    const user=emailAddress;
-    const mailPassword=await secret('Mail.com SMTP credential (hidden): ');
+    const user=senderAddress;
+    const mailPassword=(await secret('Gmail App Password (hidden; never your normal account password): ')).replace(/\s/g,'');
+    if(!/^[a-z]{16}$/i.test(mailPassword))throw Error('Use the 16-character App Password. No settings were changed.');
     if(!mailPassword || !/^[a-zA-Z0-9.-]+$/.test(host) || !['465','587'].includes(port) || /[\s<>\r\n]/.test(user) || !user.includes('@'))throw Error('Check the SMTP host, port, email and password. No settings were changed.');
     for(const [key,value] of Object.entries({SMTP_HOST:host,SMTP_PORT:port,SMTP_SECURE:String(port==='465'),SMTP_USER:user,SMTP_FROM:user,SMTP_PASS:mailPassword}))config=replace(config,key,value);
   }

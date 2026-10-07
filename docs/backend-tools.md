@@ -9,8 +9,8 @@ or changes to the website design.
 1. In the project terminal, run `npm run backend:setup`.
 2. Choose an administrator username and a private passphrase of at least 16
    characters. Input is hidden. Only a salted scrypt hash is stored.
-3. Optionally configure SMTP in the same wizard. The africamail.com account needs mail.com SMTP access
-   and an application-specific password with two-factor authentication. Do not put
+3. Optionally configure SMTP in the same wizard. The sender is dyrctkm@gmail.com; use its Gmail App Password
+   with two-step verification. Do not put
    credentials in chat. The recipient stays `htafl@africamail.com`.
 4. Supply the website origin. For the current preview it is
    `http://localhost:3128`; a deployed host must use its exact HTTPS origin.

@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import {privateStorage,saveRecord,idPattern,listRecords,readRecord,readImage,writeImage,removeImage} from './storage.js';
 import {mountAdmin} from './admin.js';
 import {pathways,validateInvolvement,involvementMessage} from './involvement.js';
-import {emailAddress,emailConfigured,transportSettings} from './email-config.js';
+import {emailAddress,senderAddress,emailConfigured,transportSettings} from './email-config.js';
 export {privateStorage,saveRecord,idPattern} from './storage.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -40,7 +40,7 @@ export function createApp(options = {}) {
   const configured = options.mailReady ?? smtpConfigured;
   const transport = configured && !options.sendMail ? nodemailer.createTransport({...transportSettings(),connectionTimeout:15000,socketTimeout:20000}) : null;
   const send = options.sendMail || (mail => transport.sendMail(mail));
-  const from = recipient;
+  const from = senderAddress;
   app.disable('x-powered-by');
   if(options.trustProxy!==undefined)app.set('trust proxy',options.trustProxy);
   else if (process.env.TRUST_PROXY_HOPS) app.set('trust proxy', Number(process.env.TRUST_PROXY_HOPS));

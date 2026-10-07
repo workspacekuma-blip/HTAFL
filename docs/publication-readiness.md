@@ -29,8 +29,7 @@ remote persistence, backup recovery, inbox delivery or actual mobile-device beha
 
 ## Owner changes and remaining activation
 
-The public contact and form destination are **htafl@africamail.com**. Sending uses only that same mailbox through mail.com, once SMTP access is
-enabled; see [private email setup](email-delivery.md).
+The public contact and form destination are **htafl@africamail.com**. Sending uses dyrctkm@gmail.com through Gmail, once its App Password is verified; see [private email setup](email-delivery.md).
 The owner is the community reviewer. Operations Manager, Nigeria, is the supplied
 operator label in the central privacy notice. Retention follows purpose and consent;
 no universal statutory number of days or automated cleanup is claimed.
@@ -52,9 +51,10 @@ GT Bank/Naira instructions remain owner-supplied; the website does not process o
 verify transfers. Crypto and merchandise are intentionally unavailable pending
 real details and do not require fabricated checkout or wallet data.
 
-## Single-account email correction
+## Sending-account update
 
-Sender, recipient and setup now use only htafl@africamail.com through smtp.mail.com.
-The runtime rejects other sending-account/provider settings. The owner confirmed
-SMTP access is not enabled; email remains unavailable and no paid upgrade was
-made. All 22 service tests, public packaging and focused setup browser checks pass.
+Public contact and recipient remain htafl@africamail.com. The owner selected
+**dyrctkm@gmail.com** as the sender through smtp.gmail.com. The runtime rejects
+other sending accounts/providers. The new sender still needs its private App
+Password; no real email was sent. All 22 service tests, public packaging and
+focused setup browser checks pass.

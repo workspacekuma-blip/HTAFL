@@ -3,14 +3,14 @@
 <body><main class="container section reading-page"><div class="stack">
 <p class="type-label">HTAFL / Private local setup</p><h1>Connect email delivery.</h1>
 <p>This screen runs only on your computer. It is not part of the public website.</p>
-<p>Sending account and inbox: <strong>htafl@africamail.com</strong>.</p>
-<p>Mail.com requires SMTP access for this account. You confirmed it is not enabled, so online email delivery remains unavailable. This setup does not purchase or upgrade an account. Use it only after SMTP access is enabled.</p>
+<p>Sending account: <strong>dyrctkm@gmail.com</strong>. Form destination and public contact: <strong>htafl@africamail.com</strong>.</p>
+<p>Enable two-step verification on dyrctkm@gmail.com, then <a href="https://myaccount.google.com/apppasswords" target="_blank" rel="noopener noreferrer">create a Google App Password</a> for the website. Enter it here privately; do not use your normal account password.</p>
 <form class="form-shell stack" id="email-setup" aria-describedby="setup-help">
-<p id="setup-help">Checks encrypted mail.com SMTP access, then saves the credential in the private, Git-ignored server configuration. It is not stored in browser storage. No email is sent during this check.</p>
-<div class="field"><label class="field__label" for="app-password">Mail.com SMTP credential</label><input class="field__control" id="app-password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="256" spellcheck="false" required aria-describedby="password-help setup-status"><p id="password-help" class="type-small">Use the account’s application-specific password if two-factor authentication is enabled. Do not paste credentials in chat.</p></div>
+<p id="setup-help">Checks encrypted Gmail SMTP access, then saves the credential in the private, Git-ignored server configuration. It is not stored in browser storage. No email is sent during this check.</p>
+<div class="field"><label class="field__label" for="app-password">Gmail App Password</label><input class="field__control" id="app-password" name="password" type="password" autocomplete="new-password" maxlength="32" spellcheck="false" required aria-describedby="password-help setup-status"><p id="password-help" class="type-small">16 characters; spaces between groups are accepted. Do not paste credentials in chat.</p></div>
 <button class="button button--primary" type="submit">Verify and save email delivery</button>
 <p id="setup-status" role="status" aria-live="polite" aria-atomic="true"></p>
-</form><p class="type-small">See the <a href="https://support.mail.com/premium/imap/server.html" target="_blank" rel="noopener noreferrer">official mail.com SMTP settings</a>. Return to Codex after saving to activate the connection.</p>
+</form><p class="type-small">See the <a href="https://support.google.com/accounts/answer/185833" target="_blank" rel="noopener noreferrer">official Google App Password guidance</a>. Return to Codex after saving to activate the connection.</p>
 <section class="stack" aria-labelledby="admin-heading"><h2 id="admin-heading">Set up community review.</h2>
 <p>Choose the sign-in details and name the person responsible for reviewing uploads. Only a salted passphrase hash is saved; the reviewer assignment stays private.</p>
 <form class="form-shell stack" id="admin-setup">

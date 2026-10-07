@@ -28,7 +28,7 @@ test('enquiries deliver to the specified inbox only, with validated reply addres
   const sent=[];
   await service({mailReady:true,sendMail:async mail=>sent.push(mail)},async({request})=>{
     const response=await request('/api/involvement',post(valid)); assert.equal(response.status,200);
-    assert.equal(sent.length,1); assert.equal(sent[0].to,recipient); assert.equal(sent[0].replyTo,valid.email);
+    assert.equal(sent.length,1); assert.equal(sent[0].to,recipient);assert.equal(sent[0].from,'dyrctkm@gmail.com'); assert.equal(sent[0].replyTo,valid.email);
     assert.match(sent[0].text,/Consent|consent/);
     const bad=await request('/api/involvement',post({...valid,consent:false,email:'bad'})); assert.equal(bad.status,422); assert.equal(sent.length,1);
     const errors=await bad.json(); assert.ok(errors.fields.email); assert.ok(errors.fields.consent);
@@ -49,7 +49,7 @@ test('uploads stay private until explicit consent and approval; public records o
   await service({mailReady:true,sendMail:async mail=>sent.push(mail)},async({request,storage})=>{
     const response=await request('/api/community/submissions',await artwork()); assert.equal(response.status,201);
     const receipt=await response.json(),file=path.join(storage,`${receipt.id}.json`);
-    assert.equal(receipt.notification,'sent'); assert.equal(sent[0].to,recipient); assert.equal(sent[0].attachments[0].contentType,'image/webp');
+    assert.equal(receipt.notification,'sent'); assert.equal(sent[0].to,recipient);assert.equal(sent[0].from,'dyrctkm@gmail.com'); assert.equal(sent[0].attachments[0].contentType,'image/webp');
     let record=JSON.parse(await readFile(file,'utf8')); assert.equal(record.status,'pending'); assert.equal(record.email,'private@example.com');
     assert.equal((await request('/api/community').then(r=>r.json())).entries.length,0);
     assert.equal((await request(`/api/community/images/${receipt.id}`)).status,404);

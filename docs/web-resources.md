@@ -30,7 +30,7 @@ are historical: the current pages do not load that renderer, its objects or audi
 | [Express](https://expressjs.com/) / official package, 5.2.1 | MIT, verified in installed package. Server dependency in `package-lock.json`; serves allowlisted public files and validated form endpoints. No client bundle/CDN. |
 | [Multer](https://expressjs.com/en/resources/middleware/multer/) / official middleware, 2.4.0 | MIT, verified in installed package. One bounded in-memory multipart image, followed by actual format decoding. No untrusted filename used as a path. |
 | [Sharp](https://sharp.pixelplumbing.com/) / official package, 0.35.5 | Apache-2.0, verified in installed package; native dependency notices retained by package installation. [Constructor and image limits](https://sharp.pixelplumbing.com/api-constructor/) guide real-format validation and the 24MP cap. Metadata removed by conversion; 1800px WebP uploads kept on private storage. |
-| [Nodemailer SMTP](https://nodemailer.com/smtp) / official package, 10.0.15 | MIT-0, verified in installed package. Email delivery and private artwork notifications to `htafl@africamail.com`; credentials remain host-only. [Official mail.com SMTP settings](https://support.mail.com/premium/imap/server.html) inform encrypted sending configuration. No real email was sent during QA. |
+| [Nodemailer SMTP](https://nodemailer.com/smtp) / official package, 10.0.15 | MIT-0, verified in installed package. Email delivery and private artwork notifications to `htafl@africamail.com`; credentials remain host-only. [Official Google App Password guidance](https://support.google.com/accounts/answer/185833) informs private sender authentication. No real email was sent during QA. |
 
 Dependencies are version-pinned and installed locally by npm. They are required
 only by the Node upload/email server; no frontend framework or large browser
@@ -517,12 +517,12 @@ See [implementation and motion safeguards](site-atmosphere.md).
 
 | Official reference | Use | Resource/license status |
 | --- | --- | --- |
-| [Mail.com SMTP settings](https://support.mail.com/premium/imap/server.html) | Owner-selected africamail.com SMTP account, TLS settings and access requirements. | Technical reference only; no provider asset or code downloaded. The private credential is entered locally, never copied into public code. |
+| [Google App Passwords](https://support.google.com/accounts/answer/185833) | Owner-selected dyrctkm@gmail.com sender with two-step verification; destination remains htafl@africamail.com. | Technical reference only; no provider asset or code downloaded. The credential is entered privately. |
 | [Nodemailer SMTP transport](https://nodemailer.com/smtp) | TLS on port 465, bounded timeouts and `verify()` for connection/authentication without sending a message. | Official technical reference; original local-only setup helper reuses the already installed Nodemailer dependency. No new package or copied documentation code. |
 
 See [private configuration and deployment instructions](email-delivery.md).
 The helper prepares email delivery; successful activation depends on a genuine
-SMTP credential, enabled mail.com SMTP access and restarting the site with its private SMTP settings.
+verified Gmail App Password and restarting the site with its private SMTP settings.
 
 ## Owner-selected resource application — 7 October 2026
 
@@ -623,7 +623,17 @@ data and an official purchase destination can be supplied before selling begins.
 | @netlify/blobs 11.1.3 | https://github.com/netlify/blobs | MIT package installed locally for the server only; distributed license remains in package. |
 | serverless-http 4.0.0 | https://github.com/dougmoscrop/serverless-http | MIT package installed locally to preserve Express backend logic. |
 | Managed HTTPS | https://docs.netlify.com/manage/domains/secure-domains-with-https/https-ssl/ | Deployment reference; certificate not verified until a site exists. |
-| mail.com domains and SMTP | https://www.mail.com/mail/domains/ ; https://support.mail.com/premium/imap/server.html ; https://www.mail.com/blog/posts/what-is-imap-pop3/86/ | africamail.com is a mail.com domain; SMTP requires Premium and is currently not enabled. Sender and recipient are both htafl@africamail.com; sending remains unavailable until configured. Technical references only. |
+| mail.com domains and SMTP | https://www.mail.com/mail/domains/ ; https://support.mail.com/premium/imap/server.html ; https://www.mail.com/blog/posts/what-is-imap-pop3/86/ | africamail.com is a mail.com domain; SMTP requires Premium and is currently not enabled. The recipient remains htafl@africamail.com; sending now uses the separately authorized dyrctkm@gmail.com account. Technical references only. |
 | Nigeria privacy principles | https://ndpc.gov.ng/our-data-privacy-policy/ ; https://ndpc.gov.ng/wp-content/uploads/2025/03/NDP-ACT-GAID-2025-MARCH-20TH.pdf | Purpose-based retention and rights reference for content/privacy-policy.json. No fixed legal duration invented; legal compliance not certified. |
 
 No new visual/audio asset was downloaded for deployment or email configuration.
+
+## Owner-selected Gmail sender — 7 October 2026
+
+The owner selected dyrctkm@gmail.com for sending, while retaining
+htafl@africamail.com for public contact and receipt.
+[Google's official App Password guide](https://support.google.com/accounts/answer/185833)
+was checked for two-step verification, credential format and account restrictions.
+Only the existing SMTP setup is changed; no new package, asset or subscription.
+The prior mail.com SMTP-only configuration is superseded. Actual authentication
+and inbox receipt still require the owner's private credential and a real test.
