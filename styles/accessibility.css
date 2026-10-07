@@ -1,0 +1,44 @@
+/* Solid ink + white rings remain visible across the brand palette. */
+:focus-visible {
+  outline: 3px solid var(--htafl-ink);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--htafl-white), var(--focus-ring);
+}
+[id] { scroll-margin-block-start: var(--space-8); }
+.skip-link {
+  position: fixed;
+  inset-block-start: var(--space-4);
+  inset-inline-start: var(--page-gutter);
+  z-index: 100;
+  transform: translateY(calc(-100% - var(--space-8)));
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  background: var(--htafl-ink);
+  color: var(--htafl-white);
+}
+.skip-link:focus { transform: translateY(0); }
+.sr-only {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .button, .card--interactive { transform: none !important; }
+}
+@media (forced-colors: active) {
+  :focus-visible { outline: 3px solid Highlight; box-shadow: none; }
+  .button { border-color: ButtonText; }
+  .button:disabled { color: GrayText; opacity: 1; }
+}

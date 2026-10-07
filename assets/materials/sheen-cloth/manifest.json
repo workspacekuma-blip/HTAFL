@@ -1,0 +1,72 @@
+{
+  "name": "Sheen Cloth",
+  "creator": "Microsoft / Khronos glTF Sample Assets",
+  "license": "CC0 1.0",
+  "originalURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenCloth/",
+  "licenseURL": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/SheenCloth/README.md",
+  "usage": "Homepage interactive draped cloth, derived lightweight mesh and material maps",
+  "files": [
+    {
+      "path": "assets/materials/sheen-cloth/technicalFabricSmall_basecolor_256.webp",
+      "originalURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenCloth/glTF/technicalFabricSmall_basecolor_256.png",
+      "bytes": 9674,
+      "originalBytes": 125026,
+      "sourceSha256": "e945c0b2aa6e3987d8bb8af23aca58a3f75cce2992bb4803bec8cac6cde8474e",
+      "dimensions": [
+        128,
+        128
+      ],
+      "sha256": "b7d3d12b88402183c1f5df209dedeabc0cff5532483b7f8b00905b7b27faf8b3"
+    },
+    {
+      "path": "assets/materials/sheen-cloth/technicalFabricSmall_normal_256.webp",
+      "originalURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenCloth/glTF/technicalFabricSmall_normal_256.png",
+      "bytes": 7600,
+      "originalBytes": 127852,
+      "sourceSha256": "299b1ccf8957d451d7841672b1750b5cfcea65fee1c97eec6b086dc3fdeea838",
+      "dimensions": [
+        128,
+        128
+      ],
+      "sha256": "1265e31fee4d0df21cbc1427c4af518b45a11f6f5a738ffb8cd692092441d8e6"
+    },
+    {
+      "path": "assets/materials/sheen-cloth/technicalFabricSmall_sheen_256.webp",
+      "originalURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenCloth/glTF/technicalFabricSmall_sheen_256.png",
+      "bytes": 20574,
+      "originalBytes": 170368,
+      "sourceSha256": "479c3c65b1b9161701c5587cdfccf42a2de38d4d5365b6b904daf9ba8b7b9aab",
+      "dimensions": [
+        128,
+        128
+      ],
+      "sha256": "0dc0483529320ad6177577487549811e2f6a3fd16d85f85c3bb6c9c6788b8497"
+    }
+  ],
+  "mesh": {
+    "path": "assets/materials/sheen-cloth/cloth-mesh.json",
+    "vertexCount": 1681,
+    "strideBytes": 48,
+    "indexCount": 9600,
+    "indexByteOffset": 80688,
+    "triangles": 3200,
+    "bytes": 133215,
+    "method": "Nearest original simulation vertices on a 40x40 UV grid; positions uniformly scaled and centered. Original normals/tangents/UVs retained.",
+    "sourceGeometryURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenCloth/glTF/SheenCloth.bin",
+    "encoding": "Base64 vertex/index buffer in JSON, decoded once on initialization"
+  },
+  "optimization": "128px WebP maps (originals 256px); 40x40 resampled UV mesh, 3,200 triangles instead of 115,200.",
+  "poster": {
+    "path": "assets/materials/sheen-cloth/cloth-poster.webp",
+    "creator": "HTAFL project render derived from Microsoft CC0 Sheen Cloth",
+    "license": "CC0 underlying geometry/material; project-authored presentation",
+    "sourceGeometryURL": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenCloth/glTF/SheenCloth.bin",
+    "usage": "Static homepage cloth fallback for reduced motion/unavailable WebGL",
+    "bytes": 6026,
+    "dimensions": [
+      504,
+      378
+    ],
+    "sha256": "383f9c84c7314e2d288a600311168d719bb86c76fb0088ff26d7aa6338ed9842"
+  }
+}

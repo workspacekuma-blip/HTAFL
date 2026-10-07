@@ -1,0 +1,80 @@
+/* Additive aliases; supplied brand tokens stay unchanged. */
+:root {
+  color-scheme: light;
+  --color-surface: var(--htafl-paper);
+  --color-text: var(--htafl-navy);
+  --color-muted: var(--htafl-ink);
+  --color-link: var(--htafl-cobalt);
+  --color-border: var(--htafl-ink);
+  --section-space: clamp(56px, 7vw, 96px);
+  --grid-gap: clamp(var(--space-4), 3vw, var(--space-8));
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { font-size: 100%; scroll-padding-block-start: var(--space-8); }
+body {
+  margin: 0;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
+img, picture, video, svg { display: block; max-inline-size: 100%; }
+img, video { block-size: auto; }
+button, input, select, textarea { font: inherit; color: inherit; }
+input, select, textarea { max-inline-size: 100%; }
+button, input, select { min-block-size: 44px; }
+textarea { resize: vertical; }
+button { cursor: pointer; }
+a { color: var(--color-link); text-underline-offset: 0.2em; text-decoration-thickness: 0.08em; }
+a:hover { text-decoration-thickness: 0.14em; }
+hr { margin-block: var(--space-8); border: 0; border-block-start: 1px solid var(--color-border); }
+figure { margin: 0; }
+h1, h2, h3, h4, h5, h6, .type-display, .type-h1, .type-h2, .type-h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+h1, .type-h1 { font-size: var(--text-h1); }
+h2, .type-h2 { font-size: var(--text-h2); }
+h3, .type-h3 { font-size: var(--text-h3); }
+h4 { font-size: var(--text-body-lg); }
+h5, h6 { font-size: var(--text-body); }
+.type-display { font-size: var(--text-display-xl); line-height: 1.02; }
+p { margin: 0; }
+.type-body-lg { font-size: var(--text-body-lg); }
+.type-body { font-size: var(--text-body); }
+small, .type-small { font-size: var(--text-small); }
+.type-label { font-size: var(--text-small); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.text-muted { color: var(--color-muted); }
+.prose > * + * { margin-block-start: var(--space-4); }
+.prose > :is(h2, h3, h4) { margin-block-start: var(--space-8); }
+.prose > :first-child { margin-block-start: 0; }
+/* Reset aliases for nested surfaces and cards. */
+.surface, .card {
+  --color-surface: var(--htafl-paper);
+  --color-text: var(--htafl-ink);
+  --color-muted: var(--htafl-ink);
+  --color-link: var(--htafl-cobalt);
+  --color-border: var(--htafl-ink);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+.surface--white { --color-surface: var(--htafl-white); --color-muted: var(--htafl-slate); }
+.surface--mist { --color-surface: var(--htafl-mist); --color-link: var(--htafl-ink); }
+.surface--coral { --color-surface: var(--htafl-coral); --color-link: var(--htafl-ink); }
+.surface--ink, .surface--cobalt {
+  --color-text: var(--htafl-white);
+  --color-muted: var(--htafl-white);
+  --color-link: var(--htafl-white);
+  --color-border: var(--htafl-white);
+}
+.surface--ink { --color-surface: var(--htafl-navy); }
+.surface--cobalt { --color-surface: var(--htafl-cobalt); }
+

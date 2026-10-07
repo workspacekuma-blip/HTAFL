@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "templates": [
+    {"id":"quote","name":"Quote / short statement","family":"overcome","layout":"quote","brand":"editorial","headline":"[Approved short statement]","body":["[Verified attribution / permission]"],"cta":"[One relevant next step]"},
+    {"id":"carousel-hook","name":"Educational carousel / hook","family":"overcome","layout":"editorial","brand":"formal","headline":"[One useful question]","body":["[What the reader will learn]"],"cta":"Swipe for the next step →","page":"01 / 03"},
+    {"id":"carousel-content","name":"Educational carousel / content","family":"overcome","layout":"instruction","brand":"editorial","headline":"[One useful idea]","body":["[First practical point]","[Second practical point]","[Third practical point]"],"cta":"[One short transition]","page":"02 / 03"},
+    {"id":"carousel-cta","name":"Educational carousel / final CTA","family":"overcome","layout":"editorial","brand":"editorial","headline":"[One achievable action]","body":["[Brief recap of the learning]"],"cta":"[Save / try / reflect / discuss]","page":"03 / 03"},
+    {"id":"practical-tip","name":"Practical tip","family":"overcome","layout":"instruction","brand":"editorial","headline":"[One practical tip]","body":["[Small action to try]","[How to begin]","[Optional reflection]"],"cta":"[A gentle invitation to try]"},
+    {"id":"challenge-launch","name":"Challenge launch","family":"create","layout":"instruction","brand":"formal","headline":"[Approved challenge name]","body":["[Creative or participation prompt]","[Confirmed timing / own pace]","[Real participation route]"],"cta":"[Verified participation CTA]"},
+    {"id":"challenge-reminder","name":"Challenge reminder","family":"connect","layout":"editorial","brand":"small-mark","headline":"[One small way to join]","body":["[Confirmed challenge reminder]","[Real deadline, if there is one]"],"cta":"[Verified participation CTA]"},
+    {"id":"community-spotlight","name":"Community spotlight","family":"connect","layout":"image","brand":"small-mark","headline":"[Approved title]","body":["[Approved public credit]"],"cta":"[Approved invitation / credit]"},
+    {"id":"founder-note","name":"Founder note","family":"overcome","layout":"editorial","brand":"editorial","headline":"[Approved founder note]","body":["[First brief personal reflection]","[Second brief personal reflection]"],"cta":"[Approved signature / invitation]"},
+    {"id":"awareness","name":"Awareness post","family":"overcome","layout":"instruction","brand":"formal","headline":"[Clear awareness headline]","body":["[Verified context]","[Practical, non-clinical action]","[Verified source / date]"],"cta":"[One supportive next step]"},
+    {"id":"event","name":"Event announcement","family":"connect","layout":"event","brand":"formal","headline":"[Confirmed event name]","body":["[Confirmed date / time / zone]","[Confirmed venue / access details]","[Real registration destination]"],"cta":"[Verified event CTA]"},
+    {"id":"creative-showcase","name":"Creative showcase","family":"create","layout":"image","brand":"small-mark","headline":"[Approved work title]","body":["[Creator-approved public credit]"],"cta":"[Approved process / material note]"},
+    {"id":"weekly-recap","name":"Weekly recap","family":"connect","layout":"instruction","brand":"editorial","headline":"[This week, together]","body":["[Verified activity / learning]","[Verified contribution]","[Confirmed next opportunity]"],"cta":"[One invitation for next week]"},
+    {"id":"video-cover","name":"Video / Reel cover","family":"create","format":"vertical","layout":"image","brand":"small-mark","headline":"[3–6 word video title]","body":["[One short category cue]"],"cta":""}
+  ]
+}

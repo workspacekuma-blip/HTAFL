@@ -1,0 +1,14 @@
+{
+  "bank": {
+    "name": "GT Bank",
+    "accountHolder": "Ekuma Billclinton",
+    "accountNumber": "0473372177",
+    "currency": "Naira",
+    "transferCode": ""
+  },
+  "crypto": {
+    "currency": "",
+    "network": "",
+    "address": ""
+  }
+}

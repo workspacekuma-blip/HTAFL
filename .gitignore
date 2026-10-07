@@ -1,0 +1,10 @@
+node_modules/
+.npm-cache/
+.env
+.env.*
+.env.email-*.tmp
+!.env.example
+var/
+test-results/
+dist/
+.netlify/

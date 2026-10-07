@@ -1,0 +1,9 @@
+{
+  "thumbnail": {"headline":"[Approved video title]","support":"[One clear learning]"},
+  "shorts": {"headline":"[Short video title]","support":"[One useful cue]","caption":"[Accurate spoken captions]"},
+  "lowerThird": {"name":"[Approved name]","role":"[Role / relationship to HTAFL]"},
+  "chapter": {"number":"01","headline":"[Approved chapter title]","support":"[One clear transition]"},
+  "quote": {"headline":"[Verified quote or statement]","credit":"[Verified attribution / permission]"},
+  "reference": {"headline":"[Source / reference title]","lines":["[Author / organization]","[Publication / date]","[Verified URL in description]","[Accessed / checked date]"]},
+  "sting": {"durationMs":2400,"pathRevealMs":160,"wordmarkDelayMs":800,"taglineDelayMs":960}
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" class="has-site-shell">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>HTAFL — Design system reference</title>
+  <link rel="stylesheet" href="../main.css">
+  <link rel="icon" href="../assets/htafl-favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#3157FF">
+  <script src="../scripts/site-shell.js" defer></script>
+</head>
+<body class="page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <site-header><header class="container section section--compact"><a href="../index.html">HTAFL home</a></header></site-header>
+  <div class="section section--compact container stack">
+    <p class="type-label">HTAFL / Component reference</p>
+    <h1 class="type-h2">Create. Overcome. Connect.</h1>
+    <p class="reading">A development reference for the shared foundation. These examples describe components, not public programmes or page content.</p>
+    <nav class="cluster" aria-label="Component sections">
+      <a class="button button--text" href="#typography">Typography</a>
+      <a class="button button--text" href="#buttons">Buttons</a>
+      <a class="button button--text" href="#cards">Cards</a>
+      <a class="button button--text" href="#layout">Layout</a>
+    </nav>
+  </div>
+  <main id="main" tabindex="-1">
+    <section id="typography" class="section surface surface--white" aria-labelledby="type-title">
+      <div class="container stack">
+        <h2 id="type-title">Typography</h2>
+        <p class="type-display">Create.</p>
+        <p class="type-h1">Display heading</p>
+        <p class="type-h2">Section heading</p>
+        <p class="type-h3">Card heading</p>
+        <p class="type-body-lg reading">Space Grotesk gives headings their character. Inter supports comfortable reading.</p>
+        <p class="reading">Body text uses a fluid layout with a 720px reading measure. Heading classes change appearance independently of semantic heading levels.</p>
+        <p class="type-small text-muted">Small text — Inter, 14px at the default browser size.</p>
+      </div>
+    </section>
+    <section id="buttons" class="section container stack" aria-labelledby="button-title">
+      <h2 id="button-title">Buttons and focus</h2>
+      <div class="cluster">
+        <a class="button button--primary" href="#cards">Explore cards</a>
+        <a class="button button--secondary" href="#layout">View layout</a>
+        <a class="button button--text" href="#typography">View typography <span class="button__arrow" aria-hidden="true">→</span></a>
+        <button class="button button--primary" type="button" disabled>Disabled example</button>
+      </div>
+      <p>Use Tab to inspect focus rings. Buttons have a minimum 44px target; motion respects your system preference.</p>
+      <div class="card-grid">
+        <div class="surface surface--ink inset stack">
+          <h3>Ink surface</h3><a class="button button--secondary" href="#cards">View cards</a>
+        </div>
+        <div class="surface surface--cobalt inset stack">
+          <h3>Cobalt surface</h3><a class="button button--secondary" href="#cards">View cards</a>
+        </div>
+        <div class="surface surface--coral inset stack">
+          <h3>Coral surface</h3><a class="button button--text" href="#cards">View cards <span class="button__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+    <section id="cards" class="section surface surface--mist" aria-labelledby="card-title">
+      <div class="container stack">
+        <h2 id="card-title">Card primitives</h2>
+        <div class="card-grid">
+          <article class="card card--action card--create card--interactive">
+            <div class="card__body"><p class="type-label">Action / Create</p><h3>Action card</h3><p>Shared spacing and an accent rule for a clear participation route.</p></div>
+            <div class="card__footer"><a class="button button--text" href="#layout">View layout <span class="button__arrow" aria-hidden="true">→</span></a></div>
+          </article>
+          <article class="card card--resource">
+            <div class="card__body"><p class="type-label">Resource</p><h3>Resource card</h3><p>White surface with room for optional media, a title, summary and descriptive link.</p></div>
+            <p class="card__footer type-small text-muted">Metadata belongs here.</p>
+          </article>
+          <article class="card card--challenge">
+            <div class="card__body"><p class="type-label">Challenge</p><h3>Challenge card</h3><p>A paper surface and dashed rule distinguish participation prompts. Include a written status when used.</p></div>
+          </article>
+          <article class="card card--action card--overcome"><h3>Overcome variant</h3><p>Ink on the supplied coral accent.</p></article>
+          <article class="card card--action card--connect"><h3>Connect variant</h3><p>Ink on the supplied mist surface.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="layout" class="section container stack" aria-labelledby="layout-title">
+      <h2 id="layout-title">Page and grid</h2>
+      <div class="grid">
+        <div class="grid__two-thirds stack"><h3>Reading column</h3><p class="reading">The grid starts as one column, becomes eight columns at 48rem, and twelve at 75rem. This region occupies eight desktop columns.</p></div>
+        <aside class="grid__sidebar card"><h3>Supporting column</h3><p>Four desktop columns. Full width on smaller screens.</p></aside>
+      </div>
+    </section>
+  </main>
+  <site-footer><footer class="surface surface--ink section section--compact"><div class="container">Create. Overcome. Connect.</div></footer></site-footer>
+</body>
+</html>
+

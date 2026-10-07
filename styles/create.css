@@ -1,0 +1,14 @@
+/* Create's editorial composition uses the shared palette, type and primitives. */
+.create-headline > span { display: block; }
+.create-headline > span:nth-child(2) { color: var(--htafl-cobalt); }
+.creative-board, .creative-board__type { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
+.creative-board { align-self: start; }
+.creative-board > *, .creative-board__type > * { min-inline-size: 0; border-radius: var(--radius-md); }
+.creative-board__wide { grid-column: 1 / -1; }
+.creative-board__mark { align-self: flex-end; filter: brightness(0) invert(1); }
+
+/* Local illustrative image planes reuse the shared card media and type styles. */
+.create-photo figcaption { margin-block-start: var(--space-2); }
+.creative-board > .create-photo .card__media { aspect-ratio: 3 / 2; }
+.create-photo--portrait .card__media { aspect-ratio: 3 / 4; }
+.create-photo--camera .card__media { object-position: 50% 25%; }

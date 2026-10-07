@@ -1,0 +1,9 @@
+{
+  "name": "HTAFL — Finish Website UI",
+  "id": "htafl-finish-website-ui-local",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {"allowedDomains": ["none"]}
+}

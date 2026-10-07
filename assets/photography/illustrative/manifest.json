@@ -1,0 +1,623 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-07",
+  "classification": "illustrative licensed photography",
+  "temporary": true,
+  "source": "Pexels",
+  "license": "Pexels License (custom license, not CC0)",
+  "licenseUrl": "https://www.pexels.com/license/",
+  "usedInProduction": true,
+  "usage": "Neutral editorial illustration only. Not HTAFL members, submissions, testimonials, endorsement or evidence of health conditions. Do not populate the consent-approved gallery.",
+  "optimization": {
+    "method": "Pillow resize with Lanczos; aspect ratio and colors retained; no creative retouching; EXIF removed",
+    "webpQuality": 78,
+    "jpegQuality": 80,
+    "jpegProgressive": true,
+    "maximumWidth": 1280,
+    "widths": [
+      640,
+      960,
+      1280
+    ]
+  },
+  "images": [
+    {
+      "id": "pexels-5026534",
+      "name": "illustrative-sketchbook",
+      "creator": "Leeloo The First",
+      "originalUrl": "https://www.pexels.com/photo/person-drawing-on-a-sketchbook-5026534/",
+      "downloadUrl": "https://images.pexels.com/photos/5026534/pexels-photo-5026534.jpeg?cs=srgb&dl=pexels-leeloothefirst-5026534.jpg&fm=jpg&w=1600&q=90",
+      "sourceSha256": "8e0cce3b5f37a12fbea6b7e93e5555c163a9cebb2c49491ea07041e96f3b711c",
+      "downloadedDimensions": [
+        1600,
+        2397
+      ],
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "classification": "illustrative",
+      "usedInProduction": true,
+      "intendedSection": "Create: sketching, illustration and mood boards",
+      "altSuggestion": "Hands drawing in a sketchbook beside loose sheets of paper.",
+      "credit": "Photo by Leeloo The First / Pexels",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-sketchbook-640.webp",
+          "width": 640,
+          "height": 959,
+          "format": "webp",
+          "bytes": 23910,
+          "sha256": "e90c170a0a3b06737bc797e9b675410f743d4f6447e798e2b2f310ae31e2e92e"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-sketchbook-960.webp",
+          "width": 960,
+          "height": 1438,
+          "format": "webp",
+          "bytes": 38518,
+          "sha256": "7353038c6f9c2a82f4e509100cad10f985dea86bc7eb9a4997bc3fe910fb0f47"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-sketchbook-1280.webp",
+          "width": 1280,
+          "height": 1918,
+          "format": "webp",
+          "bytes": 55486,
+          "sha256": "8aaa78518ea35996374617453dc6f13e47267488ba904a142f55e3596b2d763a"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-sketchbook-1280.jpg",
+          "width": 1280,
+          "height": 1918,
+          "format": "jpg",
+          "bytes": 140432,
+          "sha256": "41a4926e3b1afa007b5a1cd27fa479bcae4417039867dc1f5251d7b6702f43fe"
+        }
+      ],
+      "usedIn": [
+        "create/index.html#creative-directions"
+      ]
+    },
+    {
+      "id": "pexels-5830691",
+      "name": "illustrative-sewing",
+      "creator": "Anna Shvets",
+      "originalUrl": "https://www.pexels.com/photo/hands-of-a-person-holding-a-fabric-near-a-sewing-machine-5830691/",
+      "downloadUrl": "https://images.pexels.com/photos/5830691/pexels-photo-5830691.jpeg?cs=srgb&dl=pexels-shvetsa-5830691.jpg&fm=jpg&w=1600&q=90",
+      "sourceSha256": "f37a023c8648441be6c33d48e5f34bfbdcf90f3131edabad57f7f29b7e6c1756",
+      "downloadedDimensions": [
+        1600,
+        2400
+      ],
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "classification": "illustrative",
+      "usedInProduction": true,
+      "intendedSection": "Create: sewing and DIY/upcycling activities",
+      "altSuggestion": "Hands guiding fabric beneath a sewing machine needle.",
+      "credit": "Photo by Anna Shvets / Pexels",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-sewing-640.webp",
+          "width": 640,
+          "height": 960,
+          "format": "webp",
+          "bytes": 30670,
+          "sha256": "f4bb4a9e967f7cfd523b387cd0cf767a775ffaa1bcf75828b01b0e101e1ec78c"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-sewing-960.webp",
+          "width": 960,
+          "height": 1440,
+          "format": "webp",
+          "bytes": 60498,
+          "sha256": "96aad6288f2b3c3a0245fff85844c214f9e63dc209c9ee537eebc78417b84337"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-sewing-1280.webp",
+          "width": 1280,
+          "height": 1920,
+          "format": "webp",
+          "bytes": 102134,
+          "sha256": "7dda1dfce396439441b674cf3482c7715fcf0b818e705ce3cbcade760fc912c5"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-sewing-1280.jpg",
+          "width": 1280,
+          "height": 1920,
+          "format": "jpg",
+          "bytes": 247362,
+          "sha256": "b49a729c4335cc6e6178949462b43b986b8141bf12a446a4d45a0d5ab8d84618"
+        }
+      ],
+      "usedIn": [
+        "create/index.html#creative-directions"
+      ]
+    },
+    {
+      "id": "pexels-7775466",
+      "name": "illustrative-textiles",
+      "creator": "Ron Lach",
+      "originalUrl": "https://www.pexels.com/photo/a-woman-working-in-a-tailoring-shop-7775466/",
+      "downloadUrl": "https://images.pexels.com/photos/7775466/pexels-photo-7775466.jpeg?cs=srgb&dl=pexels-ron-lach-7775466.jpg&fm=jpg&w=1600&q=90",
+      "sourceSha256": "e10b9da11b2709130c171af2b7a073c4c16f094296ffdbb0b231048e5a88a80f",
+      "downloadedDimensions": [
+        1600,
+        1067
+      ],
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "classification": "illustrative",
+      "usedInProduction": true,
+      "intendedSection": "Create: textiles, fashion design and sustainable-fashion activities",
+      "altSuggestion": "A person spreading blue fabric across a cutting table in a tailoring studio.",
+      "credit": "Photo by Ron Lach / Pexels",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-textiles-640.webp",
+          "width": 640,
+          "height": 427,
+          "format": "webp",
+          "bytes": 14032,
+          "sha256": "50d578f813eddfc1fa94bdcf63ace26059c8452aaf48cfd23ed7dc4ef1b68cba"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-textiles-960.webp",
+          "width": 960,
+          "height": 640,
+          "format": "webp",
+          "bytes": 22354,
+          "sha256": "4dcc103248b7dabd85755f30ee369e9637717151c3b037f01ef02c9a2f608cd5"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-textiles-1280.webp",
+          "width": 1280,
+          "height": 854,
+          "format": "webp",
+          "bytes": 31944,
+          "sha256": "a2dedd22bbdf5e1f57436bd93167240b4963aa95f8ee99faeb255d6d829c8b0d"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-textiles-1280.jpg",
+          "width": 1280,
+          "height": 854,
+          "format": "jpg",
+          "bytes": 78883,
+          "sha256": "db729c9bde635cc06efef8b3d2761f29bb5dee837e28b3ae771cfd877d814d50"
+        }
+      ],
+      "usedIn": [
+        "create/index.html#create-title"
+      ]
+    },
+    {
+      "id": "pexels-18999428",
+      "name": "illustrative-photography",
+      "creator": "Matheus Bertelli",
+      "originalUrl": "https://www.pexels.com/photo/woman-taking-pictures-with-camera-18999428/",
+      "downloadUrl": "https://images.pexels.com/photos/18999428/pexels-photo-18999428.jpeg?cs=srgb&dl=pexels-bertellifotografia-18999428.jpg&fm=jpg&w=1600&q=90",
+      "sourceSha256": "8dd0227aa513e980427cd921616ed155f991e64b0adf9db3c899238c910a6de2",
+      "downloadedDimensions": [
+        1600,
+        2400
+      ],
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "classification": "illustrative",
+      "usedInProduction": true,
+      "intendedSection": "Create: photography and personal expression",
+      "altSuggestion": "A person raising a camera to take a photograph on a city street.",
+      "credit": "Photo by Matheus Bertelli / Pexels",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-photography-640.webp",
+          "width": 640,
+          "height": 960,
+          "format": "webp",
+          "bytes": 29198,
+          "sha256": "c2c8aaeb02b9bc64ec236726e03ffd29be380ab6cca6d8ef5fa37ce113da94ef"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-photography-960.webp",
+          "width": 960,
+          "height": 1440,
+          "format": "webp",
+          "bytes": 49034,
+          "sha256": "ccd3a00d208f59377da68d360d37088643b20817ec5c91eca8a41c69604c94c8"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-photography-1280.webp",
+          "width": 1280,
+          "height": 1920,
+          "format": "webp",
+          "bytes": 70172,
+          "sha256": "27ecde078d172c15e49e283f5b4b0b8ecdcdf5853fbd177598c23706a81b2683"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-photography-1280.jpg",
+          "width": 1280,
+          "height": 1920,
+          "format": "jpg",
+          "bytes": 171674,
+          "sha256": "2d9edb6feea4bf3afe04dc94014ed57aafff39993ca7ef5b67b0b21c1ce98baa"
+        }
+      ],
+      "usedIn": [
+        "create/index.html#creative-directions"
+      ]
+    },
+    {
+      "id": "pexels-7256206",
+      "name": "illustrative-workshop",
+      "creator": "Thirdman",
+      "originalUrl": "https://www.pexels.com/photo/people-working-on-table-7256206/",
+      "downloadUrl": "https://images.pexels.com/photos/7256206/pexels-photo-7256206.jpeg?cs=srgb&dl=pexels-thirdman-7256206.jpg&fm=jpg&w=1600&q=90",
+      "sourceSha256": "84481cb5ce313ddc9ebafbc9b88ab8d5af9436f5bce854b3107c3690c20ac34d",
+      "downloadedDimensions": [
+        1600,
+        2400
+      ],
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "classification": "illustrative",
+      "usedInProduction": false,
+      "intendedSection": "Homepage Connect / participation: illustrative creative collaboration",
+      "altSuggestion": "Three people discussing drawings around a table in a bright art studio.",
+      "credit": "Photo by Thirdman / Pexels",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-workshop-640.webp",
+          "width": 640,
+          "height": 960,
+          "format": "webp",
+          "bytes": 37006,
+          "sha256": "57440062f4aeb2b5af5fbaf32f7949952e346e967b289612977d247767ef5f2b"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-workshop-960.webp",
+          "width": 960,
+          "height": 1440,
+          "format": "webp",
+          "bytes": 68074,
+          "sha256": "75f303161209874383a85a448f4bcfaea219693a734373651806629096ce2be3"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-workshop-1280.webp",
+          "width": 1280,
+          "height": 1920,
+          "format": "webp",
+          "bytes": 108334,
+          "sha256": "136b7302834e9908105f6c3c20d7d28044d35d77c9c13d9a3ce7c7a08f7945a8"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-workshop-1280.jpg",
+          "width": 1280,
+          "height": 1920,
+          "format": "jpg",
+          "bytes": 204877,
+          "sha256": "b74a26717157ba5234f32d15452ae13782de655e9cfef95aec497ec5be2ecdf0"
+        }
+      ]
+    },
+    {
+      "id": "pexels-7972658",
+      "name": "illustrative-walking",
+      "creator": "George Pak",
+      "originalUrl": "https://www.pexels.com/photo/photo-of-a-group-of-friends-talking-while-walking-7972658/",
+      "downloadUrl": "https://images.pexels.com/photos/7972658/pexels-photo-7972658.jpeg?cs=srgb&dl=pexels-george-pak-7972658.jpg&fm=jpg&w=1600&q=90",
+      "sourceSha256": "8984da81c4524ae343cec1ee9c94a674b810d946c870a0cbdb542498682d40c4",
+      "downloadedDimensions": [
+        1600,
+        1067
+      ],
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "classification": "illustrative",
+      "usedInProduction": false,
+      "intendedSection": "Homepage Overcome: everyday movement; Connect: shared activities",
+      "altSuggestion": "Three people walking and talking beside a stone building.",
+      "credit": "Photo by George Pak / Pexels",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-walking-640.webp",
+          "width": 640,
+          "height": 427,
+          "format": "webp",
+          "bytes": 30416,
+          "sha256": "f596bcb92acec0891fa048054987fdf15a7fb647f966588b24d9522cac2495fa"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-walking-960.webp",
+          "width": 960,
+          "height": 640,
+          "format": "webp",
+          "bytes": 59312,
+          "sha256": "6be726e2fbf7d6a7c0a77c6578237f25f5d8a7b785ce881b68ab6a7b49821491"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-walking-1280.webp",
+          "width": 1280,
+          "height": 854,
+          "format": "webp",
+          "bytes": 94600,
+          "sha256": "63812321fcee6553dff1c9e867f7d11be7dcd119cae7d214558e36f39864fda7"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-walking-1280.jpg",
+          "width": 1280,
+          "height": 854,
+          "format": "jpg",
+          "bytes": 159624,
+          "sha256": "33b5cea1fd2778e29ffba54f8c90b18950cbc4e583d964b5740784891db87823"
+        }
+      ]
+    },
+    {
+      "id": "pexels-7147453",
+      "name": "illustrative-design-board",
+      "creator": "Michael Burrows",
+      "originalUrl": "https://www.pexels.com/photo/sketches-and-textile-on-wall-7147453/",
+      "downloadUrl": "https://images.pexels.com/photos/7147453/pexels-photo-7147453.jpeg?cs=srgb&dl=pexels-michael-burrows-7147453.jpg&fm=jpg&w=1600&q=90",
+      "sourceSha256": "3101d8a4d4bfb9ead8c79d679b58146aaf582fda733e6c1f6102e36cb635d710",
+      "downloadedDimensions": [
+        1600,
+        1067
+      ],
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "classification": "illustrative",
+      "usedInProduction": true,
+      "intendedSection": "Create: personal style, mood boards and fashion design process",
+      "altSuggestion": "Garment sketches and blue fabric swatches taped to a studio wall.",
+      "credit": "Photo by Michael Burrows / Pexels",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-design-board-640.webp",
+          "width": 640,
+          "height": 427,
+          "format": "webp",
+          "bytes": 7716,
+          "sha256": "4a511c8a49fafa8a5e81d4eb440a31c739ef295391b6ff1e3169e69abd5fbb3c"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-design-board-960.webp",
+          "width": 960,
+          "height": 640,
+          "format": "webp",
+          "bytes": 14946,
+          "sha256": "100678c81137eb503eef97a9f2bcf9f8fd4c79ef90538e2d30cd8a3d2d60382f"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-design-board-1280.webp",
+          "width": 1280,
+          "height": 854,
+          "format": "webp",
+          "bytes": 24822,
+          "sha256": "25ebe86aa7ef880f8f2ce93117959efe305ca360072969eee1125c9c2b4cc8e7"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-design-board-1280.jpg",
+          "width": 1280,
+          "height": 854,
+          "format": "jpg",
+          "bytes": 66049,
+          "sha256": "f805627beb48f561a268e06edb6c1abd93a625dccbb64b40f008e1d3eb28c0ac"
+        }
+      ],
+      "usedIn": [
+        "create/index.html#creative-directions"
+      ]
+    },
+    {
+      "id": "pexels-8769327",
+      "name": "illustrative-fashion-studio",
+      "creator": "Gustavo Fring",
+      "originalUrl": "https://www.pexels.com/photo/woman-working-at-a-desk-in-a-sewing-studio-8769327/",
+      "downloadUrl": "https://images.pexels.com/photos/8769327/pexels-photo-8769327.jpeg?cs=srgb&dl=pexels-gustavo-fring-8769327.jpg&fm=jpg&w=1600",
+      "sourceSha256": "85071ef3db0902ce5a2156ab700c7af8e9eec03b507cea4696dea13af10aeb72",
+      "license": "Pexels License",
+      "intendedSection": "Homepage hero atelier atmosphere",
+      "altSuggestion": "A fashion designer works at a cutting table surrounded by fabric and studio tools.",
+      "classification": "illustrative; not an HTAFL member or evidence of a health condition",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-fashion-studio-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 30022
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-fashion-studio-960.webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 53892
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-fashion-studio-1280.webp",
+          "width": 1280,
+          "height": 854,
+          "bytes": 78912
+        }
+      ]
+    },
+    {
+      "id": "pexels-36731169",
+      "name": "illustrative-pattern-studio",
+      "creator": "Vitaly Gariev",
+      "originalUrl": "https://www.pexels.com/photo/fashion-designer-working-with-patterns-in-studio-36731169/",
+      "downloadUrl": "https://images.pexels.com/photos/36731169/pexels-photo-36731169.jpeg?cs=srgb&dl=pexels-silverkblack-36731169.jpg&fm=jpg&w=1600",
+      "sourceSha256": "1ea6ec63090f64d644ce513e7d1a0de296a037c83bd7721d3319e2bd142785f2",
+      "downloadedDimensions": [
+        1600,
+        900
+      ],
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "classification": "illustrative",
+      "usedInProduction": true,
+      "intendedSection": "Homepage hero",
+      "altSuggestion": "A designer measures a paper garment pattern on a studio worktable.",
+      "credit": "Photo by Vitaly Gariev / Pexels",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-pattern-studio-640.webp",
+          "width": 640,
+          "height": 360,
+          "format": "webp",
+          "bytes": 22444,
+          "sha256": "384269f8e1eace32d96e1b0880fdf770a1d7520fadfafe02e78ccd727c7b4e19"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-pattern-studio-960.webp",
+          "width": 960,
+          "height": 540,
+          "format": "webp",
+          "bytes": 37228,
+          "sha256": "2c59de29c9b9c931a3559f0b7c20ddef9449ec0383652685872f14ade3366ce3"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-pattern-studio-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "format": "webp",
+          "bytes": 53848,
+          "sha256": "568c8b4f7fd4314343acec5941af1e839048b8082782b79850c4aa4965a41c55"
+        }
+      ]
+    },
+    {
+      "id": "pexels-9850072",
+      "name": "illustrative-atelier-collaboration",
+      "creator": "Ron Lach",
+      "originalUrl": "https://www.pexels.com/photo/fashion-designer-sewing-in-atelier-9850072/",
+      "downloadUrl": "https://images.pexels.com/photos/9850072/pexels-photo-9850072.jpeg?cs=srgb&dl=pexels-ron-lach-9850072.jpg&fm=jpg&w=1600",
+      "sourceSha256": "689f16875772345e0846fced450b8095d6a35e4bc2a65f61cabc159bde0f4bac",
+      "downloadedDimensions": [
+        1600,
+        1067
+      ],
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "classification": "illustrative",
+      "usedInProduction": true,
+      "intendedSection": "Homepage Create entrance, Create atelier and introduction background",
+      "altSuggestion": "A person guides orange fabric through a sewing machine with another person working behind them.",
+      "credit": "Photo by Ron Lach / Pexels",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-atelier-collaboration-640.webp",
+          "width": 640,
+          "height": 427,
+          "format": "webp",
+          "bytes": 15154,
+          "sha256": "d49a5b2c13d40a095fff15ead4f99c6dd170961b94143ded95d9b1bee7d3d7bb"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-atelier-collaboration-960.webp",
+          "width": 960,
+          "height": 640,
+          "format": "webp",
+          "bytes": 24396,
+          "sha256": "a31d4ed469a89d8d10fa6edd3ff87c8a0c0f468425cdd242ef2935e4b4382d39"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-atelier-collaboration-1280.webp",
+          "width": 1280,
+          "height": 854,
+          "format": "webp",
+          "bytes": 34936,
+          "sha256": "87ed47a740c2fcc75dd1591f1d9f7e5ce45b570f197bd5cd8241ba12f9d2f5f8"
+        }
+      ]
+    },
+    {
+      "id": "pexels-5641891",
+      "name": "illustrative-artists-collaboration",
+      "creator": "Anna Shvets",
+      "originalUrl": "https://www.pexels.com/photo/young-focused-artists-working-together-with-sketches-5641891/",
+      "downloadUrl": "https://images.pexels.com/photos/5641891/pexels-photo-5641891.jpeg?cs=srgb&dl=pexels-shvetsa-5641891.jpg&fm=jpg&w=1600",
+      "sourceSha256": "1a31affc5531d9e17460d1686da6572fb491439adf687293679482466887e0d3",
+      "downloadedDimensions": [
+        1600,
+        1067
+      ],
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "classification": "illustrative",
+      "usedInProduction": true,
+      "intendedSection": "Homepage Connect entrance, Community photograph and introduction background",
+      "altSuggestion": "Two people review drawings together on the floor of a creative workspace.",
+      "credit": "Photo by Anna Shvets / Pexels",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-artists-collaboration-640.webp",
+          "width": 640,
+          "height": 427,
+          "format": "webp",
+          "bytes": 34758,
+          "sha256": "5e09ad9fa77f02de047b87f1839f875846524bd9481a789a515f572abee4bad2"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-artists-collaboration-960.webp",
+          "width": 960,
+          "height": 640,
+          "format": "webp",
+          "bytes": 65576,
+          "sha256": "ce60bf5176d1d8008b1515532823db9e567da21339971bd658f54f578ed402ab"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-artists-collaboration-1280.webp",
+          "width": 1280,
+          "height": 854,
+          "format": "webp",
+          "bytes": 103764,
+          "sha256": "764c9bec98fd2415073aa21987ff31c8d2e76a2350581eef6f103770581ef177"
+        }
+      ]
+    },
+    {
+      "id": "pexels-12428455",
+      "name": "illustrative-progress-staircase",
+      "creator": "mücahit peker",
+      "originalUrl": "https://www.pexels.com/photo/stairs-light-city-sunset-12428455/",
+      "downloadUrl": "https://images.pexels.com/photos/12428455/pexels-photo-12428455.jpeg?auto=compress&cs=tinysrgb&w=1600&fit=max",
+      "sourceSha256": "58ca998828fc43b5054356780ae316dea974771a68ea808d0c298c8d22f2b4b3",
+      "downloadedDimensions": [
+        1600,
+        2844
+      ],
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "classification": "illustrative",
+      "usedInProduction": true,
+      "intendedSection": "Homepage Overcome entrance, Overcome photograph and introduction background",
+      "altSuggestion": "People on an industrial staircase with warm light falling across the surrounding walls.",
+      "credit": "Photo by mücahit peker / Pexels",
+      "variants": [
+        {
+          "path": "assets/photography/illustrative/illustrative-progress-staircase-640.webp",
+          "width": 640,
+          "height": 1138,
+          "format": "webp",
+          "bytes": 47518,
+          "sha256": "431a7f10a256a8d5556d396aa650c49b6ac5813b4970c7285fb3282ff045c7ee"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-progress-staircase-960.webp",
+          "width": 960,
+          "height": 1706,
+          "format": "webp",
+          "bytes": 121878,
+          "sha256": "235e4af1766672246f30d81832102ec694f910aa99d3fa87084f101bf60ae5a2"
+        },
+        {
+          "path": "assets/photography/illustrative/illustrative-progress-staircase-1280.webp",
+          "width": 1280,
+          "height": 2275,
+          "format": "webp",
+          "bytes": 229586,
+          "sha256": "70b4073adf2ede815a244bf587fcf051f2c521fd3b4dc2d6e99dadb3d46b93dd"
+        }
+      ]
+    }
+  ]
+}

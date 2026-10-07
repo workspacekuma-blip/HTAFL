@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /docs/
+Disallow: /social/
+Disallow: /youtube/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /healthz
+Disallow: /design/
+Disallow: /var/

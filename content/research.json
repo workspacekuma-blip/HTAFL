@@ -1,0 +1,38 @@
+{
+  "reviewedOn": "2026-10-06",
+  "scope": "Global context, not HTAFL outcomes or a local population estimate. Bullying is a defined indicator, not a numerical measure of hate. No fashion-specific clinical treatment percentage is asserted.",
+  "sources": [
+    {
+      "id": "bullying",
+      "value": "1 in 3",
+      "title": "Bullying and exclusion",
+      "copy": "UNESCO reports that bullying affects around one pupil in three worldwide each month.",
+      "source": "UNESCO, 2024",
+      "url": "https://www.unesco.org/en/articles/violence-and-bullying-schools-unesco-calls-better-protection-students"
+    },
+    {
+      "id": "mental-health",
+      "value": "5.3% / 3.4%",
+      "title": "Anxiety / depression",
+      "copy": "WHO estimates anxiety disorders in 5.3% and depression in 3.4% of adolescents aged 15–19 worldwide. These are separate estimates, not a combined total.",
+      "source": "WHO fact sheet, 2025",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/adolescent-mental-health"
+    },
+    {
+      "id": "arts",
+      "value": "3,000+",
+      "title": "Studies in an arts review",
+      "copy": "WHO’s 2019 scoping review brought together evidence from more than 3,000 studies on arts, health and wellbeing across the lifespan. It covered varied study designs and activities.",
+      "source": "WHO Europe, 2019",
+      "url": "https://www.who.int/europe/publications/i/item/9789289054553"
+    }
+  ],
+  "interpretation": "Creative activity can offer opportunities for expression and connection. Fashion is one HTAFL route into identity and making. The broad arts evidence does not establish that fashion participation treats depression or anxiety, and these figures do not measure HTAFL’s impact.",
+  "fashionEvidence": {
+    "title": "Fashion and wellbeing",
+    "copy": "A 2025 study of 710 Brazilian women reported both positive and negative associations between fashion clothing involvement and mental health. This cross-sectional survey cannot establish a treatment effect or be generalized to every young person.",
+    "source": "Body Image, 2025 / indexed in PubMed",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40889434/",
+    "doi": "10.1016/j.bodyim.2025.101955"
+  }
+}

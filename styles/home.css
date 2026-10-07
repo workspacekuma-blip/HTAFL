@@ -1,0 +1,32 @@
+/* Homepage composition; all type, surfaces, cards and buttons use shared primitives. */
+.hero-title { font-size: var(--text-h2); }
+.connection-line { inline-size: 100%; block-size: 24px; color: var(--htafl-cobalt); }
+.connection-line path { fill: none; stroke: currentColor; stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 0; vector-effect: non-scaling-stroke; }
+.connection-line circle { fill: currentColor; }
+.hero-explorer { align-self: start; }
+.hero-motif { position: relative; isolation: isolate; perspective: 900px; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); }
+.hero-motif > .type-label, .hero-caption { position: relative; z-index: 2; }
+.hero-sculpture { position: relative; inline-size: 100%; max-inline-size: 17rem; aspect-ratio: 1; margin: var(--space-6) auto; transform: translateZ(-10px); }
+.five-path-mark { inline-size: 100%; block-size: 100%; overflow: visible; }
+.hero-sculpture canvas { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; pointer-events: none; opacity: 0; }
+.hero-sculpture.is-rendered canvas { opacity: 1; }
+.hero-sculpture.is-rendered .five-path-mark { opacity: 0; }
+/* Ground shadow belongs to the sculpture plane, beneath the HTML caption. */
+.hero-sculpture.is-rendered::after { content: ""; position: absolute; inset: auto 19% 4%; block-size: 4%; border-radius: 50%; background: var(--htafl-ink); opacity: 0.12; filter: blur(8px); pointer-events: none; }
+.hero-caption { min-block-size: 4.5em; }
+.hero-controls { gap: var(--space-2); }
+.hero-controls .button { flex: 1; padding-inline: var(--space-2); font-size: var(--text-small); }
+.hero-controls [aria-pressed="true"] { background: var(--htafl-ink); color: var(--htafl-white); text-decoration: underline; }
+[data-hero-state="overcome"] .hero-motif { --color-surface: var(--htafl-coral); --color-text: var(--htafl-ink); }
+[data-hero-state="connect"] .hero-motif { --color-surface: var(--htafl-mist); --color-text: var(--htafl-ink); }
+.values-list { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; gap: var(--space-4) var(--space-8); }
+.values-list li { max-inline-size: 100%; min-inline-size: 0; overflow-wrap: anywhere; font-family: var(--font-display); font-size: var(--text-h3); padding-block: var(--space-4); border-block-start: var(--space-1) solid var(--htafl-cobalt); }
+@media (min-width: 48rem) and (max-width: 74.999rem) {
+  .hero-grid > .grid__two-thirds { grid-column: span 5; }
+  .hero-grid > .grid__sidebar { grid-column: span 3; }
+}
+@media (prefers-reduced-motion: reduce), (forced-colors: active) {
+  .hero-sculpture { transform: none; }
+  .hero-sculpture canvas, .hero-sculpture::after { display: none; }
+  .hero-sculpture .five-path-mark { opacity: 1; }
+}

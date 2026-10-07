@@ -1,0 +1,456 @@
+{
+  "participate": {
+    "title": "Find your way to take part.",
+    "description": "Tell us what interests you and how you prefer to participate. This starts a conversation; it does not reserve an event place.",
+    "submit": "Send participation enquiry",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Name",
+        "type": "text",
+        "min": 1,
+        "max": 100
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "min": 3,
+        "max": 254
+      },
+      {
+        "name": "participationArea",
+        "label": "Where would you like to start?",
+        "type": "select",
+        "required": true,
+        "options": [
+          [
+            "creative-practice",
+            "Creative practice"
+          ],
+          [
+            "movement-resilience",
+            "Movement and resilience"
+          ],
+          [
+            "community-connection",
+            "Community connection"
+          ],
+          [
+            "exploring",
+            "I’m still exploring"
+          ]
+        ]
+      },
+      {
+        "name": "participationFormat",
+        "label": "How do you prefer to take part? (optional)",
+        "type": "select",
+        "required": false,
+        "options": [
+          [
+            "online",
+            "Online"
+          ],
+          [
+            "in-person",
+            "In person"
+          ],
+          [
+            "either",
+            "Either"
+          ],
+          [
+            "unsure",
+            "Not sure yet"
+          ]
+        ]
+      },
+      {
+        "name": "message",
+        "label": "What would you like to try or ask about?",
+        "type": "textarea",
+        "min": 20,
+        "max": 2000
+      }
+    ]
+  },
+  "create": {
+    "title": "Bring your creative practice.",
+    "description": "Share an idea, introduce your practice or ask about a creative collaboration. You can submit images separately through the community page.",
+    "submit": "Send creative enquiry",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Name or creator name",
+        "type": "text",
+        "min": 1,
+        "max": 100
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "min": 3,
+        "max": 254
+      },
+      {
+        "name": "creativePractice",
+        "label": "Your main creative practice",
+        "type": "select",
+        "required": true,
+        "options": [
+          [
+            "fashion",
+            "Fashion and personal style"
+          ],
+          [
+            "illustration",
+            "Illustration and sketching"
+          ],
+          [
+            "upcycling",
+            "Textiles and upcycling"
+          ],
+          [
+            "photography",
+            "Photography"
+          ],
+          [
+            "mixed",
+            "Mixed creative practice"
+          ],
+          [
+            "other",
+            "Another practice"
+          ]
+        ]
+      },
+      {
+        "name": "creativeGoal",
+        "label": "What would you like to do?",
+        "type": "select",
+        "required": true,
+        "options": [
+          [
+            "share-work",
+            "Share my work"
+          ],
+          [
+            "develop-idea",
+            "Develop an idea"
+          ],
+          [
+            "collaborate",
+            "Create with others"
+          ]
+        ]
+      },
+      {
+        "name": "portfolio",
+        "label": "Portfolio or social URL (optional)",
+        "type": "url",
+        "min": 0,
+        "max": 2048
+      },
+      {
+        "name": "projectStage",
+        "label": "Where are you with your idea?",
+        "type": "select",
+        "required": true,
+        "options": [
+          [
+            "idea",
+            "An idea I want to explore"
+          ],
+          [
+            "in-progress",
+            "A work in progress"
+          ],
+          [
+            "finished",
+            "A finished piece"
+          ],
+          [
+            "exploring",
+            "Still finding my medium"
+          ]
+        ]
+      },
+      {
+        "name": "message",
+        "label": "Tell us about your work or idea",
+        "type": "textarea",
+        "min": 20,
+        "max": 2000
+      }
+    ]
+  },
+  "volunteer": {
+    "title": "Offer your time and skills.",
+    "description": "Tell us how you could help and what level of involvement fits your time. We will discuss suitable opportunities with you.",
+    "submit": "Send volunteer enquiry",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Name",
+        "type": "text",
+        "min": 1,
+        "max": 100
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "min": 3,
+        "max": 254
+      },
+      {
+        "name": "skills",
+        "label": "Skills or experience you would like to offer",
+        "type": "textarea",
+        "min": 3,
+        "max": 300
+      },
+      {
+        "name": "availability",
+        "label": "What level of involvement suits you?",
+        "type": "select",
+        "required": true,
+        "options": [
+          [
+            "occasional",
+            "Occasional help"
+          ],
+          [
+            "regular",
+            "Regular involvement"
+          ],
+          [
+            "project",
+            "A particular project"
+          ],
+          [
+            "discuss",
+            "Let’s discuss it"
+          ]
+        ]
+      },
+      {
+        "name": "volunteerArea",
+        "label": "Area of interest (optional)",
+        "type": "select",
+        "required": false,
+        "options": [
+          [
+            "creative",
+            "Creative support"
+          ],
+          [
+            "community",
+            "Community support"
+          ],
+          [
+            "events",
+            "Future event support"
+          ],
+          [
+            "communications",
+            "Communications"
+          ],
+          [
+            "unsure",
+            "Not sure yet"
+          ]
+        ]
+      },
+      {
+        "name": "volunteerFormat",
+        "label": "How would you prefer to volunteer?",
+        "type": "select",
+        "required": true,
+        "options": [
+          [
+            "remote",
+            "Remotely"
+          ],
+          [
+            "in-person",
+            "In person"
+          ],
+          [
+            "either",
+            "Either"
+          ],
+          [
+            "discuss",
+            "Let’s discuss it"
+          ]
+        ]
+      },
+      {
+        "name": "message",
+        "label": "How would you like to contribute?",
+        "type": "textarea",
+        "min": 20,
+        "max": 2000
+      }
+    ]
+  },
+  "collaborate": {
+    "title": "Start a shared idea.",
+    "description": "Introduce yourself or your organisation and describe the collaboration you have in mind.",
+    "submit": "Send collaboration proposal",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Contact name",
+        "type": "text",
+        "min": 1,
+        "max": 100
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "min": 3,
+        "max": 254
+      },
+      {
+        "name": "organisation",
+        "label": "Organisation or studio (optional)",
+        "type": "text",
+        "min": 0,
+        "max": 100
+      },
+      {
+        "name": "collaborationType",
+        "label": "What kind of collaboration?",
+        "type": "select",
+        "required": true,
+        "options": [
+          [
+            "creative-project",
+            "Creative project"
+          ],
+          [
+            "workshop",
+            "Workshop idea"
+          ],
+          [
+            "space",
+            "Shared studio or space"
+          ],
+          [
+            "resources",
+            "Learning or creative resources"
+          ],
+          [
+            "other",
+            "Another idea"
+          ]
+        ]
+      },
+      {
+        "name": "portfolio",
+        "label": "Website or portfolio URL (optional)",
+        "type": "url",
+        "min": 0,
+        "max": 2048
+      },
+      {
+        "name": "timing",
+        "label": "When would you like to begin? (optional)",
+        "type": "text",
+        "min": 0,
+        "max": 150
+      },
+      {
+        "name": "message",
+        "label": "Describe your proposal and what you could bring",
+        "type": "textarea",
+        "min": 20,
+        "max": 2000
+      }
+    ]
+  },
+  "support": {
+    "title": "Support in a way that fits you.",
+    "description": "Offer materials, skills or a partnership below, or use the separate payment pathway to make a financial contribution.",
+    "submit": "Send support enquiry",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Name",
+        "type": "text",
+        "min": 1,
+        "max": 100
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "min": 3,
+        "max": 254
+      },
+      {
+        "name": "supportType",
+        "label": "How would you like to help?",
+        "type": "select",
+        "required": true,
+        "options": [
+          [
+            "materials",
+            "Materials or equipment"
+          ],
+          [
+            "skills",
+            "Skills or time"
+          ],
+          [
+            "partnership",
+            "A support partnership"
+          ],
+          [
+            "other",
+            "Another contribution"
+          ]
+        ]
+      },
+      {
+        "name": "organisation",
+        "label": "Organisation (optional)",
+        "type": "text",
+        "min": 0,
+        "max": 100
+      },
+      {
+        "name": "supportFrequency",
+        "label": "Is your practical offer a one-off or ongoing?",
+        "type": "select",
+        "required": true,
+        "options": [
+          [
+            "one-off",
+            "A one-off contribution"
+          ],
+          [
+            "ongoing",
+            "Ongoing practical support"
+          ],
+          [
+            "discuss",
+            "Let’s discuss it"
+          ]
+        ]
+      },
+      {
+        "name": "message",
+        "label": "Tell us what you would like to offer",
+        "type": "textarea",
+        "min": 20,
+        "max": 2000
+      }
+    ]
+  }
+}

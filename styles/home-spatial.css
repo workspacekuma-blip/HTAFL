@@ -1,0 +1,168 @@
+/* Homepage composition only. Shared tokens, cards, reveals and the hero stay intact. */
+.homepage-spatial .spatial-section {
+  position: relative;
+  isolation: isolate;
+}
+.homepage-spatial .spatial-section::before {
+  content: "";
+  position: absolute;
+  inset: 0 var(--space-2) auto;
+  block-size: var(--space-2);
+  border-block-start: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
+  opacity: .12;
+  transform: perspective(900px) rotateX(48deg);
+  transform-origin: center top;
+  pointer-events: none;
+}
+.homepage-spatial .spatial-approach {
+  position: relative;
+  perspective: 1400px;
+  padding-block: var(--space-3);
+}
+.homepage-spatial .spatial-card {
+  --card-yaw: 0deg;
+  --card-rise: 0px;
+  position: relative;
+  isolation: isolate;
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--htafl-ink) 12%, transparent), var(--shadow-soft);
+  transform: rotateY(var(--card-yaw)) translateY(var(--card-rise));
+}
+.homepage-spatial .spatial-card > :not(.spatial-card-mark) { position: relative; z-index: 1; }
+.homepage-spatial .spatial-card-mark {
+  position: absolute;
+  inline-size: 7rem;
+  block-size: 7rem;
+  inset: auto var(--space-4) var(--space-4) auto;
+  color: var(--htafl-ink);
+  opacity: .06;
+  pointer-events: none;
+}
+/* Keep the inherited keyboard ring above every card's neighbouring layer. */
+.homepage-spatial .spatial-card:focus-within {
+  z-index: 2;
+  transform: rotateY(0deg) translateY(-4px);
+}
+.homepage-spatial .spatial-card:focus-visible {
+  box-shadow: 0 0 0 6px var(--htafl-white), var(--focus-ring), var(--shadow-soft);
+}
+.homepage-spatial .spatial-world { --spatial-accent: var(--htafl-ink); }
+.homepage-spatial .spatial-world--create,
+.homepage-spatial .spatial-world--connect { --spatial-accent: var(--htafl-cobalt); }
+.homepage-spatial .spatial-world::after {
+  content: "";
+  position: absolute;
+  inset: 0 var(--space-2) 0 auto;
+  border-inline-end: 1px solid var(--spatial-accent);
+  opacity: .18;
+  pointer-events: none;
+}
+.homepage-spatial .spatial-stage {
+  --spatial-shift: 0px;
+  position: relative;
+  isolation: isolate;
+  block-size: clamp(12rem, 24vw, 19rem);
+  margin-block-start: var(--space-12);
+  perspective: 1100px;
+  /* Only decorative artwork is clipped. Content and keyboard rings remain outside. */
+  overflow: hidden;
+  overflow: clip;
+  pointer-events: none;
+  border-block-end: 1px solid color-mix(in srgb, var(--spatial-accent) 24%, transparent);
+}
+.homepage-spatial .spatial-word {
+  position: absolute;
+  inset: 18% auto auto 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 13vw, 10rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.055em;
+  white-space: nowrap;
+  color: var(--spatial-accent);
+  opacity: .8;
+  transform: translate3d(0, calc(var(--spatial-shift) * -.35), -35px);
+}
+.homepage-spatial .spatial-plane {
+  position: absolute;
+  inline-size: clamp(10rem, 24vw, 17rem);
+  aspect-ratio: 1;
+  inset: auto 8% var(--space-4) auto;
+  border: 1px solid var(--spatial-accent);
+  border-radius: var(--radius-sm);
+  transform-origin: center;
+}
+.homepage-spatial .spatial-plane--back {
+  opacity: .28;
+  transform: translate3d(-22px, calc(8px - var(--spatial-shift) * .5), -40px) rotate(-3deg);
+}
+.homepage-spatial .spatial-plane--front {
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  color: var(--spatial-accent);
+  box-shadow: var(--shadow-soft);
+  transform: translate3d(0, var(--spatial-shift), 20px) rotate(2deg);
+}
+.homepage-spatial .spatial-plane--front > :is(img, svg) { inline-size: 100%; block-size: 100%; }
+.homepage-spatial .spatial-linework path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 5;
+  stroke-linejoin: round;
+}
+.homepage-spatial .spatial-library :is(.card--challenge, .card--resource) {
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--htafl-ink) 9%, transparent);
+}
+.homepage-spatial .spatial-library :is(.card--challenge, .card--resource):focus-within {
+  transform: perspective(1200px) translateY(-3px) rotateX(1deg);
+  box-shadow: var(--shadow-soft);
+}
+@media (min-width: 75rem) {
+  .homepage-spatial .spatial-card:first-child { --card-yaw: 2deg; --card-rise: 6px; }
+  .homepage-spatial .spatial-card:last-child { --card-yaw: -2deg; --card-rise: 6px; }
+  .homepage-spatial .spatial-plane--back {
+    transform: translate3d(-36px, calc(12px - var(--spatial-shift) * .5), -60px) rotateY(-8deg) rotate(-4deg);
+  }
+  .homepage-spatial .spatial-plane--front {
+    transform: translate3d(0, var(--spatial-shift), 35px) rotateY(-8deg) rotate(2deg);
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .homepage-spatial .spatial-card:hover {
+    z-index: 2;
+    transform: rotateY(0deg) rotateX(1deg) translateY(-4px);
+  }
+  .homepage-spatial .spatial-library :is(.card--challenge, .card--resource):hover {
+    transform: perspective(1200px) translateY(-3px) rotateX(1deg);
+    box-shadow: var(--shadow-soft);
+  }
+}
+@media (max-width: 47.999rem) {
+  .homepage-spatial .spatial-approach { perspective: none; }
+  .homepage-spatial .spatial-card { transform: none; }
+  .homepage-spatial .spatial-stage { perspective: none; margin-block-start: var(--space-8); }
+  .homepage-spatial .spatial-word { transform: none; }
+  .homepage-spatial .spatial-plane { inset-inline-end: 3%; }
+  .homepage-spatial .spatial-plane--back { transform: translate(-12px, 4px) rotate(-1deg); }
+  .homepage-spatial .spatial-plane--front { transform: rotate(1deg); }
+  .homepage-spatial .spatial-card:focus-within,
+  .homepage-spatial .spatial-library :is(.card--challenge, .card--resource):focus-within {
+    transform: translateY(-1px);
+  }
+}
+@media (prefers-reduced-motion: reduce), (forced-colors: active) {
+  .homepage-spatial .spatial-approach,
+  .homepage-spatial .spatial-stage { perspective: none; }
+  .homepage-spatial .spatial-section::before,
+  .homepage-spatial .spatial-card,
+  .homepage-spatial .spatial-word,
+  .homepage-spatial .spatial-plane--front,
+  .homepage-spatial .spatial-library :is(.card--challenge, .card--resource) { transform: none !important; }
+  .homepage-spatial .spatial-plane--back { transform: translate(-12px, 4px); }
+}
+@media (forced-colors: active) {
+  .homepage-spatial .spatial-stage,
+  .homepage-spatial .spatial-card-mark { display: none; }
+}

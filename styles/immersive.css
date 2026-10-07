@@ -1,0 +1,77 @@
+/* One room environment across every route. Identity and controls use shared tokens. */
+.room-ready > site-footer { display: none; }
+.room-ready:has(.room-panel[open]) { overflow: hidden; }
+.site-header--rooms .site-nav--desktop { display: block; }
+.site-header--rooms .site-nav a[aria-current] { text-decoration: underline; text-decoration-thickness: 2px; }
+.room-stage {
+  --room-header-height: 80px;
+  position: relative;
+  isolation: isolate;
+  block-size: calc(100svh - var(--room-header-height));
+  min-block-size: 38rem;
+  background: var(--htafl-paper);
+  overflow: clip;
+  overflow-anchor: none;
+}
+.room-visual, .room-static { position: absolute; inset: 0; }
+.room-visual { overflow: clip; }
+.room-stage .immersive-canvas { display: block; inline-size: 100%; block-size: 100%; }
+.room-static { perspective: 1100px; display: flex; align-items: center; justify-content: center; gap: var(--space-8); }
+.room-static > div { inline-size: 20%; block-size: 65%; border: 1px solid var(--htafl-ink); background: var(--htafl-white); transform: rotateY(-12deg); }
+.room-static > div:nth-child(2) { transform: translateZ(-80px); background: var(--htafl-paper); }
+.room-static > div:nth-child(3) { transform: rotateY(12deg); }
+.room-static img { position: absolute; inset: 45% auto auto 45%; }
+[data-renderer="webgl"] .room-static { display: none; }
+.room-mark-source { position: absolute; inset: 0; inline-size: 1px; block-size: 1px; visibility: hidden; pointer-events: none; }
+.room-welcome, .room-intro { position: absolute; z-index: 2; inset: var(--space-6) auto auto var(--page-gutter); max-inline-size: min(27rem, calc(100% - var(--page-gutter) * 2)); padding: var(--space-6); background: var(--htafl-paper); background: color-mix(in srgb, var(--htafl-paper) 96%, transparent); --stack-gap: var(--space-4); }
+.room-welcome-title { font-size: clamp(2.2rem, 4.5vw, 4rem); }
+.room-intro { inline-size: 19rem; max-inline-size: calc(100% - var(--page-gutter) * 2); --stack-gap: var(--space-3); }
+.room-intro h1 { font-size: clamp(2rem, 3.2vw, 3rem); }
+.room-intro .type-body-lg { font-size: var(--text-body); }
+.room-controls { position: absolute; z-index: 3; inset: auto var(--page-gutter) var(--space-4); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: var(--space-3); padding: var(--space-3); background: var(--htafl-paper); background: color-mix(in srgb, var(--htafl-paper) 96%, transparent); }
+.room-controls .cluster { gap: var(--space-2); }
+.room-info-links { font-size: var(--text-small); }
+.room-info-links a { display: inline-flex; align-items: center; min-block-size: 44px; padding-inline: var(--space-2); color: var(--htafl-ink); }
+.room-info-links .button { color: var(--htafl-ink); font-size: var(--text-small); }
+.room-hotspots { position: absolute; inset: 0; pointer-events: none; }
+.room-hotspot { position: absolute; pointer-events: auto; inline-size: 44px; block-size: 44px; padding: 0; margin: -22px 0 0 -22px; border-radius: var(--radius-pill); background: transparent; color: var(--htafl-ink); }
+.room-hotspot-pin { display: block; inline-size: 14px; block-size: 14px; border: 2px solid var(--htafl-white); background: var(--htafl-cobalt); box-shadow: 0 0 0 1px var(--htafl-ink); border-radius: var(--radius-pill); }
+.room-hotspot-label { position: absolute; inset: auto auto calc(100% + var(--space-1)) 50%; translate: -50% 0; background: var(--htafl-paper); border: 1px solid var(--htafl-ink); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); white-space: nowrap; font-size: var(--text-small); opacity: 0; pointer-events: none; }
+.room-hotspot:is(:hover,:focus-visible) .room-hotspot-label { opacity: 1; }
+[data-mode="welcome"] .room-hotspots, [data-renderer="2d"] .room-hotspots { display: none; }
+.room-panel { padding: 0; margin: auto; inline-size: min(70rem, calc(100vw - 2rem)); max-inline-size: calc(100vw - 2rem); max-block-size: calc(100dvh - 2rem); border: 1px solid var(--htafl-ink); border-radius: var(--radius-sm); background: var(--htafl-paper); color: var(--htafl-ink); overflow: auto; overscroll-behavior: contain; }
+.room-panel::backdrop { background: color-mix(in srgb, var(--htafl-ink) 38%, transparent); }
+.room-panel-bar { position: sticky; inset-block-start: 0; z-index: 10; padding: var(--space-3) var(--space-4); display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: space-between; align-items: center; border-block-end: 1px solid var(--htafl-ink); background: var(--htafl-paper); }
+.room-panel-bar .type-label { margin: 0; }
+.room-panel .container { max-inline-size: 100%; }
+.room-panel .section { padding-block: var(--space-12); }
+.room-panel .reading { max-inline-size: min(100%, var(--reading-max)); }
+.room-panel .site-footer { padding-inline: 0; }
+.room-idea-panel { inline-size: min(38rem, calc(100vw - 2rem)); }
+.room-idea-content { padding: var(--space-6); --stack-gap: var(--space-6); }
+.room-idea-content .type-h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+.room-article > :first-child { padding-block-start: var(--space-8); }
+.room-article :is(section,fieldset,[id]) { scroll-margin-block-start: 6rem; }
+.room-article .values-list { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,12rem),1fr)); gap: var(--space-6); list-style: none; padding: 0; font-family: var(--font-display); font-size: var(--text-h3); }
+@media (max-width: 47.999rem) {
+  .room-stage { min-block-size: 40rem; }
+  .room-welcome, .room-intro { inset: var(--space-3) var(--space-4) auto; max-inline-size: none; inline-size: auto; padding: var(--space-3); }
+  .room-welcome { inline-size: fit-content; }
+  .room-welcome-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+  .room-welcome .type-label { font-size: var(--text-small); }
+  .room-intro { inline-size: min(17rem, calc(100% - var(--space-4) * 2)); }
+  .room-intro h1 { font-size: 2rem; }
+  .room-intro .type-label { font-size: var(--text-small); }
+  .room-intro .type-body-lg { font-size: var(--text-small); }
+  .room-controls { inset: auto var(--space-3) var(--space-3); padding: var(--space-2); gap: var(--space-1); }
+  .room-controls .button { font-size: var(--text-small); padding-inline: var(--space-2); }
+  .room-info-links { inline-size: 100%; justify-content: space-between; gap: 0; }
+  .room-info-links a { padding-inline: var(--space-1); }
+  .room-panel { inline-size: calc(100vw - 1rem); max-inline-size: calc(100vw - 1rem); max-block-size: calc(100dvh - 1rem); }
+  .room-panel-bar { padding: var(--space-2); }
+  .room-panel-bar h2 { font-size: 1.25rem; }
+  .room-idea-content { padding: var(--space-4); }
+}
+@media (pointer: coarse), (max-width: 47.999rem) { .room-hotspots { display: none; } }
+@media (prefers-reduced-motion: reduce), (forced-colors: active) { .room-stage *, .room-panel * { animation: none !important; transition: none !important; } .room-static { perspective: none; } .room-static > div { transform: none; } }
+@media (forced-colors: active) { .room-hotspots { display: none; } .room-static { display: none; } .room-panel::backdrop { background: Canvas; opacity: .8; } }

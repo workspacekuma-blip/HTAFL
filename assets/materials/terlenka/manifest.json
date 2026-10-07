@@ -1,0 +1,24 @@
+{
+  "name": "Terlenka",
+  "creators": {
+    "photography": "colormass",
+    "processing": "Rico Cilliers"
+  },
+  "originalUrl": "https://polyhaven.com/a/terlenka",
+  "downloadUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/terlenka/terlenka_diff_1k.jpg",
+  "sourceSha256": "74c4333ed05e133928b0cf6d52e732135c8c0ce6dc8623efa590fb31b90f15c0",
+  "license": "CC0 1.0",
+  "licenseUrl": "https://polyhaven.com/license",
+  "downloadedDimensions": [
+    1024,
+    1026
+  ],
+  "localPath": "assets/materials/terlenka/terlenka-diffuse-512.webp",
+  "width": 512,
+  "height": 513,
+  "bytes": 838,
+  "sha256": "ab5818eb567f1fe2aabc7fa9fcd880c4c6b1e65f343df943abe7077d32edcb7e",
+  "use": "Decorative shared CSS textile background; not loaded into WebGL",
+  "optimization": "Diffuse only, resized with Lanczos, WebP quality 78; metadata removed",
+  "reviewedOn": "2026-10-07"
+}

@@ -1,0 +1,69 @@
+/* Textile atmosphere: existing brand tokens and locally licensed photography. */
+.fashion-site {
+  background-color:var(--htafl-paper);
+  background-image:
+    linear-gradient(color-mix(in srgb,var(--htafl-paper) 88%,transparent),color-mix(in srgb,var(--htafl-paper) 88%,transparent)),
+    url('../assets/materials/terlenka/terlenka-diffuse-512.webp');
+  background-size:auto,128px auto;
+}
+.fashion-site .page-opening {
+  --opening-photo:url('../assets/photography/illustrative/illustrative-sewing-640.webp');
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  border-bottom:1px solid var(--htafl-champagne);
+}
+.fashion-site[data-page=about] .page-opening,
+.fashion-site[data-page=resources] .page-opening {--opening-photo:url('../assets/photography/illustrative/illustrative-sketchbook-640.webp')}
+.fashion-site[data-page=create] .page-opening {--opening-photo:url('../assets/photography/illustrative/illustrative-atelier-collaboration-640.webp')}
+.fashion-site[data-page=overcome] .page-opening {--opening-photo:url('../assets/photography/illustrative/illustrative-progress-staircase-640.webp')}
+.fashion-site[data-page=community] .page-opening {--opening-photo:url('../assets/photography/illustrative/illustrative-artists-collaboration-640.webp')}
+.fashion-site[data-page=how-it-works] .page-opening,
+.fashion-site[data-page=get-involved] .page-opening {--opening-photo:url('../assets/photography/illustrative/illustrative-workshop-640.webp')}
+.fashion-site[data-page=credits] .page-opening,
+.fashion-site[data-page=privacy] .page-opening,
+.fashion-site[data-page=accessibility] .page-opening,
+.fashion-site[data-page=community-guidelines] .page-opening,
+.fashion-site[data-page=not-found] .page-opening {--opening-photo:none}
+.page-opening::before {
+  content:"";
+  position:absolute;
+  inset:-12px -12px -12px 38%;
+  z-index:-1;
+  background-image:linear-gradient(90deg,var(--htafl-paper) 0%,color-mix(in srgb,var(--htafl-paper) 90%,transparent) 20%,color-mix(in srgb,var(--htafl-paper) 14%,transparent) 80%),var(--opening-photo);
+  background-size:cover;
+  background-position:center;
+  transform:translate3d(var(--atmosphere-x,0px),var(--atmosphere-y,0px),0);
+}
+/* Solid reading surfaces keep the decorative texture away from long-form copy. */
+.founder-story,.form-shell {background:var(--htafl-paper)}
+/* Keep both collaborators visible within the existing narrow image frames. */
+.fashion-site .photo--shared-sketches {object-position:88% center}
+site-header::after {
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:2px;
+  background:var(--htafl-navy);
+  transform:scaleX(var(--reading-progress,0));
+  transform-origin:left;
+  pointer-events:none;
+  z-index:2;
+}
+@media(min-width:75rem) {
+  .page-opening .section-heading {max-width:60%}
+}
+@media(max-width:74.999rem) {
+  .page-opening::before {inset:-12px -12px -12px 50%;opacity:.28}
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  .page-opening::before {transition:transform 550ms var(--ease-brand)}
+}
+@media(prefers-reduced-motion:reduce) {
+  .page-opening::before {transform:none;transition:none}
+  site-header::after {display:none}
+}
+@media(forced-colors:active) {
+  .fashion-site {background-image:none}
+  .page-opening::before,site-header::after {display:none}
+}

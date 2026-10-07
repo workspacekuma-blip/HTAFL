@@ -1,0 +1,31 @@
+/* Mobile first. Native media conditions cannot use CSS variables.
+   Tablet: 48rem (768px); desktop: 75rem (1200px) at default browser size. */
+.page { min-block-size: 100vh; min-block-size: 100svh; }
+.container {
+  inline-size: calc(100% - var(--page-gutter) - var(--page-gutter));
+  max-inline-size: var(--layout-max);
+  margin-inline: auto;
+}
+.container--reading { max-inline-size: var(--reading-max); }
+.reading { max-inline-size: var(--reading-max); }
+.section { padding-block: var(--section-space); }
+.section--compact { padding-block: var(--space-8); }
+.inset { padding: var(--space-8); }
+.stack { display: flex; flex-direction: column; gap: var(--stack-gap, var(--space-6)); }
+.cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--cluster-gap, var(--space-4)); }
+.grid, .card-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--grid-gap); }
+.grid > *, .card-grid > *, .cluster > *, .stack > * { min-inline-size: 0; }
+.grid > * { grid-column: 1 / -1; }
+.grid--start { align-items: start; }
+@media (min-width: 48rem) {
+  .grid { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+  .grid > .grid__half, .grid > .grid__third { grid-column: span 4; }
+  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 75rem) {
+  .grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .grid > .grid__half { grid-column: span 6; }
+  .grid > .grid__third, .grid > .grid__sidebar { grid-column: span 4; }
+  .grid > .grid__two-thirds { grid-column: span 8; }
+  .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

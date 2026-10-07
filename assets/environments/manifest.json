@@ -1,0 +1,52 @@
+{
+  "asset": "Studio Small 09",
+  "creator": "Sergej Majboroda",
+  "publisher": "Poly Haven",
+  "reviewedOn": "2026-10-05",
+  "originalUrl": "https://polyhaven.com/a/studio_small_09",
+  "metadataUrl": "https://api.polyhaven.com/files/studio_small_09",
+  "sourceFileUrl": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_09_1k.hdr",
+  "downloadUrl": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_09_1k.hdr?download=1",
+  "license": "CC0 1.0 Universal",
+  "licenseUrl": "https://polyhaven.com/license",
+  "licenseTextUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+  "source": {
+    "dimensions": [
+      1024,
+      512
+    ],
+    "format": "Radiance RGBE HDR",
+    "bytes": 1615248,
+    "md5": "d5d7eb9d26d341d6aa4d11c1a54fd97c",
+    "sha256": "e7cfda5f4e98e623db12b8bfd0184e048488e4855d9c83e2751fb44a32e80c45"
+  },
+  "derivative": {
+    "path": "assets/environments/studio-small-09-neutral-128.hdr",
+    "dimensions": [
+      128,
+      64
+    ],
+    "format": "Radiance RGBE RLE HDR",
+    "colorSpace": "scene-linear; neutral luminance RGB",
+    "bytes": 27199,
+    "sha256": "eab384092212064b3b47fb6c98230300b13e72e2d41e1f300436b31acfc81eee",
+    "modifications": "8x8 area reduction in linear light, weighted by latitude solid angle; neutral luminance (.2126 R + .7152 G + .0722 B) replicated in RGB; Radiance RGBE run-length encoding; no exposure normalization or highlight clipping.",
+    "qualityChecks": {
+      "finite": true,
+      "peakAboveOne": true,
+      "maxRGBERelativeError": 0.007690728019358204,
+      "decodedRGBBytes": 98304
+    }
+  },
+  "preview": {
+    "path": "assets/environments/studio-small-09-neutral-preview.webp",
+    "bytes": 708,
+    "use": "Internal review only, LDR tonemapped preview derived from the CC0 HDR asset; not an environment map",
+    "toneMap": "luminance/(1+luminance), followed by display gamma 1/2.2"
+  },
+  "intendedUse": "Optional soft studio lighting study for HTAFL Five-Path Mark. Not a scene backdrop or reflective material. Prefer existing procedural lighting for production.",
+  "usedInProduction": false,
+  "runtimeRequestsAdded": 0,
+  "dependenciesAdded": 0,
+  "credit": "Studio Small 09 by Sergej Majboroda / Poly Haven, CC0. Attribution optional; retained here."
+}

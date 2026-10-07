@@ -1,0 +1,68 @@
+:root {
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  --htafl-navy: #101A33;
+  --htafl-champagne: #D6C1A7;
+  --htafl-gray-blue: #8B9AAF;
+  --htafl-ink: #0B0B0C;
+  --htafl-cobalt: #3157FF;
+  --htafl-coral: #D6C1A7;
+  --htafl-paper: #F7F4EC;
+  --htafl-mist: #8B9AAF;
+  --htafl-slate: #101A33;
+  --htafl-white: #F7F4EC;
+
+  /* Owner-requested retail accents, sampled from the supplied reference. */
+  --htafl-retail-black: #000000;
+  --htafl-retail-white: #FFFFFF;
+  --htafl-retail-blue: #051A6E;
+  --social-instagram-gold: #FEDA75;
+  --social-instagram-orange: #FA7E1E;
+  --social-instagram-pink: #D62976;
+  --social-instagram-purple: #962FBF;
+  --social-instagram-blue: #4F5BD5;
+  --social-tiktok-cyan: #25F4EE;
+  --social-tiktok-pink: #FE2C55;
+
+  --htafl-success: #137A5B;
+  --htafl-warning: #A85D00;
+  --htafl-danger: #B42318;
+
+  --font-display: "Space Grotesk", Arial, sans-serif;
+  --font-body: "Inter", Arial, sans-serif;
+
+  --text-display-xl: clamp(3.5rem, 8vw, 7.5rem);
+  --text-h1: clamp(2.25rem, 4.2vw, 3.5rem);
+  --text-h2: clamp(1.75rem, 3.2vw, 2.75rem);
+  --text-h3: 1.5rem;
+  --text-body-lg: clamp(1.125rem, 1.4vw, 1.375rem);
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 12px 40px rgba(17,24,39,0.10);
+  --focus-ring: 0 0 0 4px rgba(49,87,255,0.28);
+
+  --motion-fast: 160ms;
+  --motion-base: 240ms;
+  --motion-slow: 420ms;
+  --ease-brand: cubic-bezier(.2,.8,.2,1);
+
+  --layout-max: 1296px;
+  --reading-max: 720px;
+  --page-gutter: clamp(20px, 5vw, 72px);
+}
+
