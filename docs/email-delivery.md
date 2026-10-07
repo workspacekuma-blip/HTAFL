@@ -26,7 +26,9 @@ STARTTLS. Other account/provider settings do not enable sending.
 Restart/redeploy, run `npm run backend:check`, then use `npm run email:test` for
 the authorized participation submission. Confirm receipt in the africamail.com
 inbox/spam folder independently; SMTP acceptance alone does not prove receipt.
-No real credential or email has been tested yet. See [Netlify launch](netlify-launch.md).
+Current local review: SMTP authentication passes, and an owner-authorized
+participation submission was received at htafl@africamail.com, confirmed by the
+owner. Administrator setup and deployed-host checks remain pending. See [Netlify launch](netlify-launch.md).
 Never publish `.env` or send passwords in chat.
 
 Official sources: [Google App Passwords](https://support.google.com/accounts/answer/185833),

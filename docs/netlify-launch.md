@@ -81,9 +81,11 @@ is applied to the deployment package, not guessed in local previews.
 Unit tests exercise persistent storage and cross-instance state using mock object
 storage, and the modern Request/Response boundary preserves the existing Express
 validation and sign-in behavior. These are not live Netlify integration tests.
-The public package and existing site are checked locally. No real SMTP credential,
-live account access, deployment, HTTPS certificate or remote persistence has yet
-been verified. Private setup and actual site/account access are still required.
+The public package and existing site are checked locally. Gmail authentication
+and one controlled local form delivery now pass; the owner confirmed inbox receipt.
+Live Netlify account access, deployment, HTTPS certificate and remote persistence
+have not been verified. Administrator setup and actual site/account access are
+still required.
 
 Official references: [Netlify pricing](https://www.netlify.com/pricing/),
 [modern Functions](https://docs.netlify.com/build/functions/api/),

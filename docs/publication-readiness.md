@@ -1,60 +1,64 @@
-# HTAFL publication readiness — 7 October 2026
+# HTAFL website review — 7 October 2026
 
-**Prepared for Netlify staging; public launch is not activated.** The website is
-preserved, and the selected free hosting preparation uses modern Netlify Functions
-and private Blobs alongside the existing static frontend. There is no paid hosting
-purchase, remote deployment, real sending credential or configured administrator.
+**Local website and real email delivery pass review. Public hosting and
+administrator activation remain incomplete.** Branding, layout and copy were
+preserved. No new reproducible website defect was found. The browser review
+previously assumed email was always unconfigured; its test now covers the live
+availability state and an isolated unavailable state without sending test-fixture
+messages through real SMTP.
 
-## Verified locally
+## Current verification
 
-- All 22 service tests pass: tailored forms, mail states, image conversion,
-  consent/private publication, administrator access, local setup, persistent
-  object-storage adapters, shared sessions/limits and modern function requests.
-  Storage and SMTP tests use isolated mocks, not live cloud credentials.
-- Browser suites pass 44 main responsive checks, 24 pathway/index checks,
-  five mock submissions, private moderation, featured gallery, and private setup
-  on desktop/390/320px, including keyboard focus and automated accessibility.
-- Public packaging succeeds into `dist`; private configuration, server code,
-  uploads and design context stay outside it. Real HTTPS-origin builds generate
-  canonical/sharing metadata, a wordmark sharing image and sitemap. Preview
-  packages are noindex. No domain is invented for the local preview.
-- The existing local audit resolves 521 references across 24 public pages;
-  approved gallery data contains no fake members or test works.
-- Dependency audit reports zero known vulnerabilities in the checked registry
-  snapshot. Two MIT dependencies support the Netlify backend; none changes the
-  frontend identity, layout, motion or framework.
+| Check | Result |
+| --- | --- |
+| Backend/build | All 22 service tests pass; public packaging succeeds. |
+| Main pages | 44 responsive checks across desktop/tablet/390px/320px pass, including keyboard navigation, mobile menu Escape/focus, resource filters, form validation and image dialogs. |
+| Questionnaires | 24 pathway/index checks and five isolated mock submissions pass. The Get Involved index has no form; each chosen pathway has its own questionnaire. |
+| Utility/prompt pages | 21 additional desktop/mobile checks and automated accessibility checks pass for privacy, accessibility, guidelines, not-found and three actual resource prompts. |
+| Links/metadata/assets | 24 public pages and all 521 local link/image/stylesheet references resolve. Six form actions are backend routes covered by service tests. Each page has one H1, title and description. Favicon and wordmark resolve. |
+| Community | Private upload, consent, publication, withdrawal, featured selection and image-viewer tests pass using isolated fixtures. The live gallery remains empty; no fake profiles or test works were published. |
+| Motion/WebGL | Actual cloth rendering, pixel cap, no idle loop, offscreen pause, pointer response, reduced motion and unavailable-GPU fallback pass. |
+| Form states | Real availability plus isolated unavailable, validation, success and failed-delivery preservation states pass. Tests do not send fictional enquiries to the live inbox. |
+| Dependency audit | Zero known production vulnerabilities reported in the checked registry snapshot. |
+| Private boundary | Environment, repository, server/setup, design and private upload paths return 404. Unauthenticated review returns 401; security headers and private no-store/noindex headers pass. |
+| Visual inspection | Fresh desktop/mobile screenshots inspected for homepage, bank support and the community invitation. No overlap or horizontal overflow found in tested views. |
 
-These checks do not establish live Netlify execution, Linux native-image packaging,
-remote persistence, backup recovery, inbox delivery or actual mobile-device behavior.
+Automated accessibility checks and Chrome viewport emulation do not establish an
+independent accessibility certification, actual Safari/iOS/Android behavior or
+production loading performance. The local-reference audit does not verify every
+external website's availability.
 
-## Owner changes and remaining activation
+## Real email activation
 
-The public contact and form destination are **htafl@africamail.com**. Sending uses dyrctkm@gmail.com through Gmail, once its App Password is verified; see [private email setup](email-delivery.md).
-The owner is the community reviewer. Operations Manager, Nigeria, is the supplied
-operator label in the central privacy notice. Retention follows purpose and consent;
-no universal statutory number of days or automated cleanup is claimed.
+Sender: **dyrctkm@gmail.com**. Recipient/public contact: **htafl@africamail.com**.
+The saved private SMTP credential passes connection/authentication. The preview
+was restarted to activate it. One previously owner-authorized participation test
+was accepted by SMTP; the owner explicitly confirmed receipt in the recipient
+inbox. No password is recorded here, in browser code or in Git.
 
-1. Enter sending and administrator credentials privately, restart/redeploy,
-   and test a real delivery to the new inbox. Confirm actual receipt.
-2. Provide the exact Netlify site URL/account connection, push source to its
-   connected GitHub repository and deploy with the private environment settings.
-   See [Netlify launch](netlify-launch.md). HTTPS and persistent cloud storage are
-   prepared in code but not verified on a live site.
-3. Exercise private upload, approval, withdrawal and persistence after redeploy.
-   Establish protected backups and periodic expired-state housekeeping.
-4. Confirm legal controller identity, provider arrangements, retention operations
-   and guardian verification before accepting children's personal submissions.
-   See [Nigeria privacy operations](privacy-operations.md).
-5. Test actual deployed forms and navigation on iOS/Safari and Android/Chrome.
+## Still required for public launch
 
-GT Bank/Naira instructions remain owner-supplied; the website does not process or
-verify transfers. Crypto and merchandise are intentionally unavailable pending
-real details and do not require fabricated checkout or wallet data.
+1. Set the administrator passphrase privately and activate sign-in. The owner is
+   assigned as reviewer, but live administrator credentials remain absent.
+2. Connect this GitHub repository to the actual Netlify site and configure its
+   private environment. Source is pushed; the real domain/site identity and live
+   deployment are not available here. See [Netlify launch](netlify-launch.md).
+3. Verify HTTPS, domain metadata, native-image execution and persistent private
+   Blobs on the deployed site. Test an upload across redeploy, approval and
+   withdrawal; arrange protected backups and expired-state housekeeping.
+4. Confirm operational privacy/retention procedures and verified guardian consent
+   before accepting children's personal submissions. A general consent checkbox
+   is not a guardian-verification workflow. See [privacy operations](privacy-operations.md).
+5. Test the deployed site on actual iOS/Safari and Android/Chrome devices.
 
-## Sending-account update
+Bank instructions remain owner-supplied and transfers are not automatically
+processed or confirmed. Crypto and merchandise are intentional coming-soon
+states until their real details are supplied.
 
-Public contact and recipient remain htafl@africamail.com. The owner selected
-**dyrctkm@gmail.com** as the sender through smtp.gmail.com. The runtime rejects
-other sending accounts/providers. The new sender still needs its private App
-Password; no real email was sent. All 22 service tests, public packaging and
-focused setup browser checks pass.
+## Files changed in this review
+
+- `tests/browser-qa.cjs`: supports enabled live email and explicitly verifies the unavailable state with an isolated configuration response.
+- `docs/publication-readiness.md`, `docs/email-delivery.md`, `docs/netlify-launch.md`: current review evidence and confirmed local email activation.
+
+Screenshots and working audit outputs are ignored under `test-results/`. The
+existing `.env` and private community storage remain excluded from Git.

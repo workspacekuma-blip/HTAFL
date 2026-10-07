@@ -60,7 +60,16 @@ const base=process.env.QA_ORIGIN || 'http://localhost:3128';
   await page.locator('[data-submit]').click(); assert.equal(await page.locator('[data-form-errors]').isVisible(),true);
   assert.equal(await page.locator('[data-form-errors]').evaluate(n=>n===document.activeElement),true);
   await page.goto(base+'/get-involved/collaborate/'); assert.equal(await page.locator('#involvement-collaborate-interest').inputValue(),'collaborate');
-  assert.equal(await page.locator('#involvement-collaborate-contact [data-submit]').isDisabled(),true); assert.match(await page.locator('#involvement-collaborate-contact [data-form-notice]').textContent(),/not configured/);
+  const liveConfig=await page.request.get(base+'/api/config').then(r=>r.json());
+  await page.waitForFunction(()=>!document.querySelector('[data-form-notice]').textContent.includes('Checking'));
+  assert.equal(await page.locator('#involvement-collaborate-contact [data-submit]').isDisabled(),!liveConfig.emailReady);
+  assert.match(await page.locator('#involvement-collaborate-contact [data-form-notice]').textContent(),liveConfig.emailReady?/sent to htafl@africamail.com/:/not configured/);
+  // Keep the unavailable-state check isolated from live sending credentials.
+  await page.route('**/api/config',route=>route.fulfill({contentType:'application/json',body:JSON.stringify({emailReady:false,uploadsReady:true})}));
+  await page.reload({waitUntil:'networkidle'});
+  assert.equal(await page.locator('#involvement-collaborate-contact [data-submit]').isDisabled(),true);
+  assert.match(await page.locator('#involvement-collaborate-contact [data-form-notice]').textContent(),/not configured/);
+  await page.unroute('**/api/config');
   await page.goto(base+'/'); await page.emulateMedia({reducedMotion:'reduce'});
   assert.equal(await page.locator('.hero-atelier img').first().evaluate(n=>getComputedStyle(n).animationName),'none');
   const links=await page.locator('a[href]').evaluateAll(nodes=>nodes.map(n=>n.href).filter(href=>href.startsWith(location.origin)));
