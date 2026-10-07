@@ -15,8 +15,9 @@ The final production address is `https://htaflco.netlify.app`. Its HTTPS,
 metadata, 15 public routes, private-file boundary and protected review endpoints
 pass direct live checks. Extended live browser runs were interrupted by transient
 network timeouts; they are not recorded as a completed deployed browser suite.
-Basic owner-reported phone/dashboard results initially belong to `htafl-890` and
-must be repeated at the final address.
+The owner confirmed repeating basic phone/dashboard checks at the final address.
+The final site's private upload also survived redeploy to `966f586`, remained
+unpublished and was withdrawn; record and image deletion were verified.
 
 | Check | Result |
 | --- | --- |

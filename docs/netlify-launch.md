@@ -20,8 +20,11 @@ The final existing `htaflco` site was then deployed successfully with the same
 verified production mail/admin settings and its own HTTPS origin. Public HTTPS,
 HTTP redirection, 15 routes, canonical metadata, unauthenticated admin protection
 and excluded private files pass there. A new private upload was converted, stored,
-excluded from the gallery and accepted for email notification. Final-site
-persistence across the next redeploy and withdrawal are being checked separately.
+excluded from the gallery and accepted for email notification. The same record
+and converted image survived the GitHub-triggered redeploy to `966f586`.
+Withdrawal deleted both. The owner confirmed repeating administrator sign-in and
+basic phone checks at the final address. Both test uploads were kept unpublished
+and removed; no community submission was migrated or published as a test.
 
 Netlify currently lists a 300-credit monthly Free limit, including Functions and
 Blob storage. This is a limited free tier, not unlimited hosting. Check usage in

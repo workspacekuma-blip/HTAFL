@@ -8,8 +8,10 @@ on `https://htafl-890.netlify.app/`. Device models, OS/browser versions and the
 remaining checks have not been supplied or independently verified.
 
 The owner subsequently selected `https://htaflco.netlify.app` as the final site.
-Repeat the phone checks there; the reported results above belong to the initial
-`htafl-890` deployment and do not establish testing on the final address.
+The owner subsequently confirmed completing administrator sign-in and repeating
+the menu, scrolling, resource-search and involvement-form checks on the final
+site. These are owner-reported basic checks; the remaining detailed tests and
+device/version details below still require recording.
 
 Record the deployed URL, deployment ID, test date, phone model, OS and browser
 version, and pass/fail for each check. Do not record passwords or private artwork.
