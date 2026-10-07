@@ -80,7 +80,7 @@
       if (errors.size) { status.textContent = ''; summary.focus(); return; }
       const data = new FormData(form);
       fields.filter(f => f.type === 'checkbox').forEach(field => data.set(field.name, String(field.checked)));
-      const body = upload ? data : JSON.stringify({...Object.fromEntries(data), consent: form.elements.consent.checked});
+      const body = upload ? data : JSON.stringify({...Object.fromEntries(data), consent: form.elements.consent.checked, adultConsent: form.elements.adultConsent.checked});
       pending = true; fieldset.disabled = true; form.setAttribute('aria-busy', 'true'); submit.textContent = upload ? 'Uploading…' : 'Sending…';
       status.textContent = upload ? 'Uploading your work for private review…' : 'Sending your enquiry…';
       let serverErrors = {}, successful = false;

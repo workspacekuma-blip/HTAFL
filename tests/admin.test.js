@@ -25,7 +25,7 @@ async function login(request) {
 }
 async function upload(request,permission) {
   const data=new FormData();
-  Object.entries({credit:'Test creator',email:'private@example.com',title:'Test fabric study',description:'A textile study made for isolated service testing.',alt:'A small piece of ivory fabric.',category:'fashion',publicationConsent:String(permission),rightsConsent:'true',contactConsent:'true'}).forEach(([key,value])=>data.set(key,value));
+  Object.entries({credit:'Test creator',email:'private@example.com',title:'Test fabric study',description:'A textile study made for isolated service testing.',alt:'A small piece of ivory fabric.',category:'fashion',publicationConsent:String(permission),rightsConsent:'true',contactConsent:'true',adultConsent:'true'}).forEach(([key,value])=>data.set(key,value));
   const image=await sharp({create:{width:40,height:40,channels:3,background:'#f7f4ec'}}).png().toBuffer();
   data.set('artwork',new Blob([image],{type:'image/png'}),'test.png');
   const response=await request('/api/community/submissions',{method:'POST',body:data});assert.equal(response.status,201);return response.json();

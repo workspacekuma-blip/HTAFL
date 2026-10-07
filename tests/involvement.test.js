@@ -6,7 +6,7 @@ import os from 'node:os';
 import {createApp} from '../server/index.js';
 import {pathways} from '../server/involvement.js';
 
-const base={name:'Test contributor',email:'person@example.com',message:'I would like to discuss contributing to this project.',consent:true};
+const base={name:'Test contributor',email:'person@example.com',message:'I would like to discuss contributing to this project.',consent:true,adultConsent:true};
 test('pathway index has no forms and each dedicated route serves exactly its own form',async()=>{
   const server=createApp({mailReady:false}).listen(0,'127.0.0.1');
   await new Promise(resolve=>server.once('listening',resolve));

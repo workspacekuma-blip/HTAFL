@@ -16,7 +16,7 @@ const os=require('node:os');
   const browser=await chromium.launch({channel:'chrome',headless:true});
   try{
     const record=new FormData();
-    Object.entries({credit:'Test-only textile creator',email:'private@example.com',title:'Consent-approved browser fixture',category:'fashion',description:'A work created only to test the private review dashboard.',alt:'Illustrative textile material used as a test fixture.',rightsConsent:'true',contactConsent:'true',publicationConsent:'true'}).forEach(([key,value])=>record.set(key,value));
+    Object.entries({credit:'Test-only textile creator',email:'private@example.com',title:'Consent-approved browser fixture',category:'fashion',description:'A work created only to test the private review dashboard.',alt:'Illustrative textile material used as a test fixture.',rightsConsent:'true',contactConsent:'true',adultConsent:'true',publicationConsent:'true'}).forEach(([key,value])=>record.set(key,value));
     record.set('artwork',new Blob([fs.readFileSync('assets/photography/illustrative/illustrative-textiles-640.webp')],{type:'image/webp'}),'fixture.webp');
     const upload=await fetch(origin+'/api/community/submissions',{method:'POST',headers:{Origin:origin},body:record});assert.equal(upload.status,201);
     const {id}=await upload.json();

@@ -108,6 +108,19 @@ were removed from mobile navigation. No test work is left in the live gallery.
 
 [Netlify launch](netlify-launch.md) adds shared private object storage, persistent
 sessions, request limits and moderation leases. Process-local restrictions above
-apply to the ordinary filesystem Node mode. The new deployment has not run on a
-live account. The owner is the reviewer; the private local email/admin setup can
+apply to the ordinary filesystem Node mode. The final production deployment is
+https://htaflco.netlify.app; private uploads and sign-in have been tested live.
+The owner is the reviewer; the private local email/admin setup can
 create a salted administrator hash. All notifications now go to htafl@africamail.com.
+
+## Adult-only submissions and encrypted recovery
+
+All six online forms require an adult-only self-declaration and exclude child
+personal information/identifiable images. Missing confirmation is rejected by
+the API before email or persistent storage. For child participation follow
+[guardian consent](guardian-consent.md); this is not an online guardian portal.
+
+`npm run backup:create` makes an encrypted snapshot of the final private upload
+store; `backup:verify` authenticates it; `backup:recover` writes a fresh private
+review folder without publishing or overwriting production. See
+[backup and recovery](backup-recovery.md). The key is separate and private.

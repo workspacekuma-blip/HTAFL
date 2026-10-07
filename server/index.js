@@ -85,7 +85,7 @@ export function createApp(options = {}) {
       res.json({message:'Your message has been sent to HTAFL. Thank you for reaching out.'});
     } catch(e) {next(e);}
   });
-  const upload = multer({storage:multer.memoryStorage(), limits:{fileSize:maxUploadBytes,files:1,fields:11,parts:12,fieldSize:6000},
+  const upload = multer({storage:multer.memoryStorage(), limits:{fileSize:maxUploadBytes,files:1,fields:12,parts:13,fieldSize:6000},
     fileFilter:(req,file,cb)=>cb(acceptedImageTypes.includes(file.mimetype)?null:fail('Choose a JPEG, PNG or WebP image.'),acceptedImageTypes.includes(file.mimetype))}).single('artwork');
   app.post('/api/community/submissions', sameOrigin, limit, upload, async(req,res,next)=>{
     try {
@@ -94,6 +94,7 @@ export function createApp(options = {}) {
       if(!categories.includes(b.category))errors.category='Choose a creative category.';
       if(b.rightsConsent!=='true')errors.rightsConsent='Confirm you own the work and have permission from people shown.';
       if(b.contactConsent!=='true')errors.contactConsent='Consent is required to review your submission.';
+      if(b.adultConsent!=='true')errors.adultConsent='Online uploads are for adults and must not contain children’s personal information or identifiable images. A guardian must contact HTAFL first.';
       if(!req.file)errors.artwork=`Choose one image, up to ${maxUploadBytes/1024/1024} MB.`;
       if(b.website)throw fail('Submission could not be accepted.');
       if(Object.keys(errors).length)throw fail('Please check your submission.',422,errors);
@@ -104,7 +105,7 @@ export function createApp(options = {}) {
         converted=await source.rotate().resize({width:1800,height:1800,fit:'inside',withoutEnlargement:true}).webp({quality:80}).toBuffer({resolveWithObject:true});
       } catch {throw fail('This image could not be read. Use a still JPEG, PNG or WebP image under 24 megapixels.',422,{artwork:'Choose a readable still image.'});}
       const id=randomUUID(),record={id,credit,email,title,description,alt,category:b.category,
-        publicationConsent:b.publicationConsent==='true',rightsConsent:true,contactConsent:true,status:'pending',
+        publicationConsent:b.publicationConsent==='true',rightsConsent:true,contactConsent:true,adultConsent:true,consentVersion:'adult-online-2026-10-07',status:'pending',
         width:converted.info.width,height:converted.info.height,createdAt:new Date().toISOString(),notification:'not-configured'};
       const release=options.state?await options.state.lock(id):null;
       if(options.state && !release)throw fail('This submission is already being processed.',409);

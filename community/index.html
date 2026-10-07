@@ -170,6 +170,7 @@
 </div>
 <fieldset class="form-fields" disabled>
 <legend class="sr-only">Share your work</legend>
+<p class="type-small">Online forms are for adults aged 18 or over. For a child’s involvement, a parent or legal guardian must <a href="mailto:htafl@africamail.com">contact the Operations Manager first</a>. Please do not send a child’s personal details or identifiable images through this form.</p>
 <div class="field">
 <label class="field__label" for="artwork-credit">Creator credit</label>
 <input class="field__control" id="artwork-credit" name="credit" type="text" maxlength="100" required aria-describedby="artwork-credit-error">
@@ -224,6 +225,14 @@
 <img class="upload-preview" data-upload-preview hidden alt="Preview of your selected work">
 </div>
 <p class="type-small">Your email is private. Submitting does not guarantee publication. You can request withdrawal at htafl@africamail.com.</p>
+<div class="field">
+<label class="consent-choice" for="artwork-adultConsent">
+<input id="artwork-adultConsent" name="adultConsent" type="checkbox" required aria-describedby="artwork-adultConsent-error">
+<span>I am 18 or over, and this submission contains no child’s personal information or identifiable images.</span>
+</label>
+<p class="field__error type-small" id="artwork-adultConsent-error" hidden>
+</p>
+</div>
 <div class="field">
 <label class="consent-choice" for="artwork-rightsConsent">
 <input id="artwork-rightsConsent" name="rightsConsent" type="checkbox" required aria-describedby="artwork-rightsConsent-error">

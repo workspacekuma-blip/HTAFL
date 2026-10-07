@@ -78,6 +78,7 @@ def form(kind,pathway=None,base='../'):
     if pathway:
         fields=[(f['name'],f['label'],f['type'],f.get('max',0),f.get('min',0)) for f in involvement_pathways[pathway]['fields']]
         s+=f'<input type="hidden" id="{prefix}-interest" name="interest" value="{pathway}">'
+    s+='<p class="type-small">Online forms are for adults aged 18 or over. For a child’s involvement, a parent or legal guardian must <a href="mailto:htafl@africamail.com">contact the Operations Manager first</a>. Please do not send a child’s personal details or identifiable images through this form.</p>'
     for name,label,type,maxlen,minlen in fields:
         id=f'{prefix}-{name}';req=' required' if minlen>0 or type=='select' else ''
         s+=f'<div class="field"><label class="field__label" for="{id}">{label}</label>'
@@ -95,6 +96,7 @@ def form(kind,pathway=None,base='../'):
         s+=f'<div class="upload-zone"><label class="field__label" for="{prefix}-artwork">Upload your work</label><p class="type-small">One still JPEG, PNG or WebP, up to <span data-upload-limit>3 MB</span>. We remove embedded metadata and keep your upload private during review.</p><input id="{prefix}-artwork" type="file" name="artwork" accept="image/jpeg,image/png,image/webp" required aria-describedby="{prefix}-artwork-error"><p id="{prefix}-artwork-error" class="field__error type-small" hidden></p><img class="upload-preview" data-upload-preview hidden alt="Preview of your selected work"></div>'
         consents=[('rightsConsent','I created this work, have the right to share it, and have permission from any identifiable people shown.',True),('contactConsent','I agree that HTAFL may store my submission privately and use my email to contact me about its review.',True),('publicationConsent','HTAFL may display this work, title, description and creator credit publicly after review. My email stays private. (optional)',False)]
     else:consents=[('consent','I agree that HTAFL may use these details to respond to my enquiry.',True)]
+    consents.insert(0,('adultConsent','I am 18 or over, and this submission contains no child’s personal information or identifiable images.',True))
     s+='<p class="type-small">'+('Your email is private. Submitting does not guarantee publication. You can request withdrawal at htafl@africamail.com.' if upload else 'Please avoid private health details. Message: 20–2000 characters.')+'</p>'
     for name,label,req in consents:
         id=f'{prefix}-{name}'

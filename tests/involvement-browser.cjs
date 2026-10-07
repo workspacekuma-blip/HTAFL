@@ -42,7 +42,7 @@ const path=require('node:path');
         if(field.type==='select')await control.selectOption(field.options[0][0]);
         else await control.fill(field.name==='email'?'person@example.com':field.type==='url'?'https://example.com/studio':field.name==='name'?'Test contributor':'A thoughtful contribution for this test workflow.');
       }
-      await form.locator('[name=consent]').check();await form.locator('[data-submit]').click();
+      await form.locator('[name=adultConsent]').check(); await form.locator('[name=consent]').check();await form.locator('[data-submit]').click();
       await page.waitForFunction(k=>document.querySelector(`#involvement-${k}-contact [data-form-status]`).textContent.includes('has been sent'),key);
       assert.ok(sent.at(-1).subject.endsWith(key));
     }

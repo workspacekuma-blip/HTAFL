@@ -19,6 +19,7 @@ export function validateInvolvement(body) {
     }
   }
   if(body.consent!==true)fields.consent='Consent is required to respond.';
+  if(body.adultConsent!==true)fields.adultConsent='Online forms are for adults. A parent or guardian must contact HTAFL first about a child’s involvement.';
   return {fields,values};
 }
 export function involvementMessage(interest,values) {
@@ -26,5 +27,5 @@ export function involvementMessage(interest,values) {
     const value=values[field.name];
     const readable=field.type==='select'?field.options.find(([key])=>key===value)?.[1]:value;
     return `${field.label}: ${readable || 'Not provided'}`;
-  }),'Response consent: Yes'].join('\n\n');
+  }),'Response consent: Yes','Adult-only submission confirmation: Yes (self-declared, not identity verification)'].join('\n\n');
 }

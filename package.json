@@ -14,7 +14,10 @@
     "email:setup": "node server/email-setup.js",
     "email:test": "node --env-file-if-exists=.env server/test-submission.js",
     "backend:check": "node --env-file-if-exists=.env server/check.js",
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "backup:create": "node server/backup-cli.js create",
+    "backup:verify": "node server/backup-cli.js verify",
+    "backup:recover": "node server/backup-cli.js recover"
   },
   "dependencies": {
     "@netlify/blobs": "11.1.3",

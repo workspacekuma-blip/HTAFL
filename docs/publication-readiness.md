@@ -12,12 +12,46 @@ messages through real SMTP.
 
 The table records the local review unless it explicitly names a live result.
 The final production address is `https://htaflco.netlify.app`. Its HTTPS,
-metadata, 15 public routes, private-file boundary and protected review endpoints
-pass direct live checks. Extended live browser runs were interrupted by transient
-network timeouts; they are not recorded as a completed deployed browser suite.
+metadata, public routes, private-file boundary and protected review endpoints
+pass live checks. The latest published-site browser review completed successfully
+after resolving the hosting badge warning described below.
 The owner confirmed repeating basic phone/dashboard checks at the final address.
 The final site's private upload also survived redeploy to `966f586`, remained
 unpublished and was withdrawn; record and image deletion were verified.
+
+### Latest published-site review — 7 October 2026
+
+- Reviewed 21 public pages on the final HTTPS address at 1440, 768, 390 and
+  320 pixels: 84 layout checks passed without horizontal overflow.
+- All 21 pages passed automated WCAG A/AA checks in the tested mobile viewport.
+  They each have one main landmark, one H1, a title and a description.
+- Mobile navigation focus trapping, Escape, focus restoration and scroll lock;
+  social icons/new-tab behavior; image-dialog close/focus; resource filtering,
+  empty state, reset and URL search; and invalid-form error-summary focus passed.
+- The Get Involved index remains form-free. Email/upload availability is enabled
+  on the deployed forms. This review sent no enquiries or uploads.
+- Further live checks passed for keyboard prompt checklists, reset, no persistence,
+  instructions without JavaScript, image-gallery browsing, bounded pointer depth,
+  touch layouts and reduced-motion behavior.
+- The final live browser run reported no JavaScript or console errors. Fresh
+  desktop/mobile homepage and desktop support screenshots were visually inspected.
+- All 22 service tests passed, the public package built successfully, and all
+  531 local link/image/style/font references in that package resolved.
+
+**Issue fixed:** Netlify injected its optional badge into an inline frame. Its
+script conflicted with HTAFL's existing Content Security Policy and emitted an
+error on every page. The final site's `built_with_badge_enabled` setting is now
+off. Fresh requests have no badge iframe and no corresponding console warning.
+No website code, branding, layout or security-policy relaxation was needed.
+This is a hosting setting, not a source-code change. Netlify documents the
+[per-project badge setting](https://docs.netlify.com/manage/projects/powered-by-netlify-badge/).
+
+Chrome viewport checks are distinct from actual-phone testing. The owner previously
+confirmed basic checks on both phones; detailed screen-reader, landscape, larger-text
+and slow-network checks remain in the phone checklist. Guardian verification,
+controller details, retention handling and protected backup/recovery remain owner
+operations. No new delivery, sign-in or persistence claim is based solely on a
+configuration flag; their previous live verification is recorded separately above.
 
 | Check | Result |
 | --- | --- |
@@ -58,11 +92,18 @@ inbox. No password is recorded here, in browser code or in Git.
    GitHub-triggered redeploy, and was withdrawn. Both record and image deletion
    were confirmed. The owner confirmed the live email notification arrived.
    See [Netlify launch](netlify-launch.md).
-3. Arrange protected backups, recovery testing and expired-state housekeeping.
-   These operator procedures are not automatically supplied by persistence.
+3. Encrypted private backup tools and an isolated real-image recovery drill are
+   implemented. The first production snapshot and offline recovery passed with
+   zero records. Copy the encrypted archive to owner-selected mail.com Drive,
+   keep the key separately and verify a downloaded copy. Backup scheduling and
+   expired-state housekeeping remain operator tasks. See [backup/recovery](backup-recovery.md).
 4. Confirm operational privacy/retention procedures and verified guardian consent
    before accepting children's personal submissions. A general consent checkbox
-   is not a guardian-verification workflow. See [privacy operations](privacy-operations.md).
+   is not a guardian-verification workflow. All six forms now enforce an adult-only
+   confirmation and exclude child personal details/identifiable images. The
+   private guardian verification, separate publication permission and withdrawal
+   procedure is in [guardian consent](guardian-consent.md). It must actually be
+   followed before collecting any child's information.
 5. The owner reported that menu, sideways scrolling, resource search and opening
    an involvement form pass on both phones. Complete the remaining landscape,
    assistive-technology, larger-text, image-selection and slow-network checks in

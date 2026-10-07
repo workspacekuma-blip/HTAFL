@@ -637,3 +637,19 @@ was checked for two-step verification, credential format and account restriction
 Only the existing SMTP setup is changed; no new package, asset or subscription.
 The prior mail.com SMTP-only configuration is superseded. Actual authentication
 and inbox receipt still require the owner's private credential and a real test.
+
+## Accessibility, guardian procedures and recovery — 7 October 2026
+
+Technical and operational references only; no downloadable visual asset or new
+package. The owner-run checks and procedures are documented separately.
+
+| Official source | Use |
+| --- | --- |
+| [Apple VoiceOver in Safari](https://support.apple.com/en-gb/guide/iphone/iphe4ee74be8/ios) | Actual-phone rotor/heading/link/form-control checks; not replaced by browser emulation |
+| [Google TalkBack with Chrome](https://support.google.com/accessibility/android/answer/2633135?hl=en) | Reading-control and form navigation instructions for Android |
+| [NDPA 2023, section 31](https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf) | Guardian permission and appropriate verification; adult-only online boundary is a project safeguard, not identity verification |
+| [Netlify Blobs](https://docs.netlify.com/build/data-and-storage/netlify-blobs/) | Strong private reads and paginated backup export using the already installed MIT SDK |
+| [Node crypto](https://nodejs.org/api/crypto.html) | Native authenticated AES-256-GCM archives with separate recovery key |
+
+No provider login/session, SMTP password, private upload or recovery key is
+included in the public repository or deployment package.

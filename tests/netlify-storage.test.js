@@ -45,7 +45,7 @@ test('shared blob API converts real uploads and enforces private review/publicat
   const origins=servers.map(s=>`http://127.0.0.1:${s.address().port}`);
   const request=(i,route,body,headers={})=>fetch(origins[i]+route,{...(body?{method:'POST',body:body instanceof FormData?body:JSON.stringify(body)}:{}),headers:{Origin:origins[i],...(!(body instanceof FormData)?{'Content-Type':'application/json'}:{}),...headers}});
   try{
-    const form=new FormData();Object.entries({credit:'Test-only creator',email:'private@example.com',title:'Test-only upload',description:'Test work for validating the backend storage boundary.',alt:'A test-only ivory rectangle.',category:'art',rightsConsent:'true',contactConsent:'true',publicationConsent:'true'}).forEach(([key,value])=>form.set(key,value));
+    const form=new FormData();Object.entries({credit:'Test-only creator',email:'private@example.com',title:'Test-only upload',description:'Test work for validating the backend storage boundary.',alt:'A test-only ivory rectangle.',category:'art',rightsConsent:'true',contactConsent:'true',adultConsent:'true',publicationConsent:'true'}).forEach(([key,value])=>form.set(key,value));
     const image=await sharp({create:{width:20,height:20,channels:3,background:'#f7f4ec'}}).png().toBuffer();form.set('artwork',new Blob([image],{type:'image/png'}),'test.png');
     const submitting=request(0,'/api/community/submissions',form);await started;
     const [{id}]=await listRecords(createBlobStorage(uploads));

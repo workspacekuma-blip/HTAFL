@@ -17,9 +17,13 @@ These are owner procedures; no automatic cleanup/backup workflow is claimed.
 Handle access/correction/deletion and consent withdrawal through the named inbox.
 Do not publish private emails or review notes. Obtain and appropriately verify
 guardian permission before accepting children's personal information or images;
-the current online forms do not implement a verified guardian workflow. A policy
+the online forms now enforce an adult-only self-declaration and exclude child
+personal information and identifiable images. They do not verify guardian authority. A policy
 paragraph or ordinary consent checkbox is not proof of guardian verification.
 Complete this operational safeguard before inviting children to submit directly.
+Follow [the guardian procedure](guardian-consent.md) before agreeing any private
+child participation. Follow [backup and recovery](backup-recovery.md) for encrypted
+copies and withdrawal checks; backups are owner-run, not automatically scheduled.
 
 ## Review procedure — assigned to the HTAFL owner
 

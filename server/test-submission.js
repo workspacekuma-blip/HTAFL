@@ -5,7 +5,7 @@ try{
   if((url.protocol!=='https:' && !(local && url.protocol==='http:')) || url.username || url.password || url.pathname!=='/' || url.hash || url.search)throw Error('Use the exact website origin, with HTTPS outside localhost.');
   const availability=await fetch(url.origin+'/api/config',{signal:AbortSignal.timeout(15000)}).then(r=>{if(!r.ok)throw Error('The website service is unavailable.');return r.json();});
   if(!availability.emailReady)throw Error('Email delivery is not enabled. Save private SMTP settings and restart/redeploy first. No submission was sent.');
-  const body={interest:'participate',name:'HTAFL Operations Manager',email:'htafl@africamail.com',message:'Owner-authorized HTAFL delivery test of the participation form. This is a technical test, not a request to join an event. Please confirm receipt in the HTAFL inbox.',consent:true};
+  const body={interest:'participate',name:'HTAFL Operations Manager',email:'htafl@africamail.com',message:'Owner-authorized HTAFL delivery test of the participation form. This is a technical test, not a request to join an event. Please confirm receipt in the HTAFL inbox.',consent:true,adultConsent:true};
   for(const field of pathways.participate.fields)if(field.type==='select' && field.required)body[field.name]=field.options[0][0];
   const response=await fetch(url.origin+'/api/involvement',{method:'POST',headers:{Origin:url.origin,'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(45000)});
   const result=await response.json();if(!response.ok)throw Error(result.message || 'Submission failed.');

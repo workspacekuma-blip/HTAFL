@@ -6,7 +6,7 @@ import os from 'node:os';
 import sharp from 'sharp';
 import {createApp, recipient, privateStorage, saveRecord} from '../server/index.js';
 
-const valid = {name:'Test designer',email:'designer@example.com',interest:'create',creativePractice:'fashion',projectStage:'idea',creativeGoal:'share-work',message:'I would like to share my textile work with you.',portfolio:'https://example.com/portfolio',consent:true};
+const valid = {name:'Test designer',email:'designer@example.com',interest:'create',creativePractice:'fashion',projectStage:'idea',creativeGoal:'share-work',message:'I would like to share my textile work with you.',portfolio:'https://example.com/portfolio',consent:true,adultConsent:true};
 async function service(options, run) {
   const storage = await mkdtemp(path.join(os.tmpdir(),'htafl-service-test-'));
   const server = createApp({...options,storage}).listen(0,'127.0.0.1');
@@ -17,9 +17,22 @@ async function service(options, run) {
   finally { await new Promise(resolve=>server.close(resolve)); await rm(storage,{recursive:true,force:true}); }
 }
 const post = body => ({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+test('online adult confirmation is required before sending or storing submissions',async()=>{
+  const sent=[];
+  await service({mailReady:true,sendMail:async mail=>sent.push(mail)},async({request,storage})=>{
+    for(const adultConsent of [undefined,false,'true']){
+      const response=await request('/api/involvement',post({...valid,adultConsent}));
+      assert.equal(response.status,422);assert.ok((await response.json()).fields.adultConsent);
+    }
+    const upload=await artwork();upload.body.delete('adultConsent');
+    const response=await request('/api/community/submissions',upload);
+    assert.equal(response.status,422);assert.ok((await response.json()).fields.adultConsent);
+    assert.equal(sent.length,0);assert.deepEqual(await readdir(storage),[]);
+  });
+});
 const artwork = async ({permission='true',bytes,mime='image/png',rights='true'}={}) => {
   const form=new FormData();
-  Object.entries({credit:'A test creator',email:'private@example.com',title:'Original textile study',category:'fashion',description:'An original fabric experiment made for this test.',alt:'A small square of warm ivory fabric.',rightsConsent:rights,contactConsent:'true',publicationConsent:permission}).forEach(([key,value])=>form.set(key,value));
+  Object.entries({credit:'A test creator',email:'private@example.com',title:'Original textile study',category:'fashion',description:'An original fabric experiment made for this test.',alt:'A small square of warm ivory fabric.',rightsConsent:rights,contactConsent:'true',adultConsent:'true',publicationConsent:permission}).forEach(([key,value])=>form.set(key,value));
   const image=bytes || await sharp({create:{width:80,height:60,channels:3,background:'#f7f4ec'}}).png().toBuffer();
   form.set('artwork',new Blob([image],{type:mime}),'untrusted-name.png'); return {method:'POST',body:form};
 };
