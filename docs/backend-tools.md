@@ -9,8 +9,8 @@ or changes to the website design.
 1. In the project terminal, run `npm run backend:setup`.
 2. Choose an administrator username and a private passphrase of at least 16
    characters. Input is hidden. Only a salted scrypt hash is stored.
-3. Optionally configure SMTP in the same wizard. Gmail needs an App Password
-   with two-step verification; do not use your normal Gmail password or put
+3. Optionally configure SMTP in the same wizard. The africamail.com account needs mail.com SMTP access
+   and an application-specific password with two-factor authentication. Do not put
    credentials in chat. The recipient stays `htafl@africamail.com`.
 4. Supply the website origin. For the current preview it is
    `http://localhost:3128`; a deployed host must use its exact HTTPS origin.
@@ -78,7 +78,7 @@ delivery test before public launch. No real email was sent in this implementatio
 
 ## Verification
 
-Fifteen service tests pass for private Gmail setup, tailored enquiries, bank contribution presentation, uploads, consent, private endpoints,
+Fifteen service tests pass for private email setup, tailored enquiries, bank contribution presentation, uploads, consent, private endpoints,
 password verification, authentication, CSRF/origin protection, publication,
 withdrawal, logout, email retries, HTTPS enforcement and login throttling.
 `tests/admin-browser.cjs` exercises actual login, mobile layout, automated WCAG

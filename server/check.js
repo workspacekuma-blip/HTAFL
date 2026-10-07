@@ -4,15 +4,16 @@ import {randomUUID} from 'node:crypto';
 import nodemailer from 'nodemailer';
 import {privateStorage} from './storage.js';
 import {validHash} from './password.js';
+import {emailConfigured,transportSettings} from './email-config.js';
 
 console.log('HTAFL backend readiness check — no email is sent.');
 let ready=true;
 const report=(label,passed,detail)=>{console.log(`${passed?'READY':'SETUP NEEDED'}: ${label}${detail?` — ${detail}`:''}`);if(!passed)ready=false;};
 report('Administrator passphrase',validHash(process.env.ADMIN_PASSWORD_HASH),'Use npm run backend:setup to configure or reset it.');
-const configured=!!(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS);
+const configured=emailConfigured();
 if(!configured)report('Email delivery',false,'Configure SMTP credentials privately; inbox: htafl@africamail.com.');
 else {
-  const transport=nodemailer.createTransport({host:process.env.SMTP_HOST,port:Number(process.env.SMTP_PORT||465),secure:process.env.SMTP_SECURE!=='false',auth:{user:process.env.SMTP_USER,pass:process.env.SMTP_PASS},connectionTimeout:10000,socketTimeout:15000});
+  const transport=nodemailer.createTransport({...transportSettings(),connectionTimeout:10000,socketTimeout:15000});
   try{await transport.verify();report('SMTP connection and authentication',true,'This verifies access, not final inbox delivery.');}
   catch{report('SMTP connection and authentication',false,'Check credentials, port and host connectivity.');}
   finally{transport.close();}

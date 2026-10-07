@@ -6,10 +6,10 @@ import {randomUUID} from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {hashPassword} from './password.js';
+import {emailAddress,smtpHost,transportSettings} from './email-config.js';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const inbox='htafl@africamail.com';
-const sender='htaflco@gmail.com';
+const inbox=emailAddress;
 const replace=(source,key,value)=>{
   const line=`${key}=${JSON.stringify(value)}`,pattern=new RegExp(`^${key}=.*$`,'m');
   return pattern.test(source)?source.replace(pattern,()=>line):`${source.trimEnd()}\n${line}\n`;
@@ -59,25 +59,24 @@ export function createEmailSetup(options={}){
     if(busy)return res.status(409).json({message:'A connection check is already running.'});
     if(Date.now()-windowStart>60000){attempts=0;windowStart=Date.now();}
     if(++attempts>3){res.set('Retry-After','60');return res.status(429).json({message:'Please wait one minute before trying again.'});}
-    const password=typeof req.body?.password==='string'?req.body.password.replace(/\s/g,''):'';
-    if(!/^[a-z]{16}$/i.test(password))return res.status(422).json({message:'Enter the 16-character Gmail App Password. Spaces between groups are accepted. Never use your normal Google password.'});
+    const password=typeof req.body?.password==='string'?req.body.password:'';
+    if(password.length<8 || password.length>256 || /[\x00-\x1f\x7f]/.test(password))return res.status(422).json({message:'Enter the mail.com SMTP credential, 8–256 characters. Use an application-specific password when two-factor authentication is enabled.'});
     busy=true;
-    const transport=(options.transportFactory || nodemailer.createTransport)({host:'smtp.gmail.com',port:465,secure:true,
-      auth:{user:sender,pass:password},logger:false,debug:false,connectionTimeout:10000,greetingTimeout:10000,socketTimeout:15000,dnsTimeout:10000});
+    const transport=(options.transportFactory || nodemailer.createTransport)({...transportSettings({SMTP_PORT:465,SMTP_PASS:password}),connectionTimeout:10000,greetingTimeout:10000,socketTimeout:15000,dnsTimeout:10000});
     let temporary;
     try{
       await transport.verify(); // Connection/authentication only; sends no email.
       let config,newFile=false;
       try{config=await readFile(configFile,'utf8');}catch(error){if(error.code!=='ENOENT')throw error;config=await readFile(path.join(root,'.env.example'),'utf8');newFile=true;}
-      for(const [key,value] of Object.entries({SMTP_HOST:'smtp.gmail.com',SMTP_PORT:'465',SMTP_SECURE:'true',SMTP_USER:sender,SMTP_FROM:sender,SMTP_PASS:password}))config=replace(config,key,value);
+      for(const [key,value] of Object.entries({SMTP_HOST:smtpHost,SMTP_PORT:'465',SMTP_SECURE:'true',SMTP_USER:inbox,SMTP_FROM:inbox,SMTP_PASS:password}))config=replace(config,key,value);
       if(newFile){config=replace(replace(config,'PORT','3128'),'PUBLIC_ORIGIN','http://localhost:3128');}
       temporary=`${configFile}.email-${randomUUID()}.tmp`;
       await writeFile(temporary,config,{flag:'wx',mode:0o600});await rename(temporary,configFile);temporary=undefined;saved=true;
       options.onSaved?.();
-      res.json({message:'Gmail sending authentication verified and private settings saved. Return to Codex so the website can restart with email enabled. No test email was sent.'});
+      res.json({message:'Mail.com authentication verified and private settings saved. Return to Codex so the website can restart with email enabled. No test email was sent.'});
     }catch(error){
       if(temporary)await unlink(temporary).catch(()=>{});
-      res.status(502).json({message:error.code==='EAUTH'?'Google did not accept this App Password. Check the sending account is htaflco@gmail.com and use its App Password. Delivery goes to htafl@africamail.com. No settings were changed.':'The connection or save could not be completed. Check connectivity and try again. Credentials are never shown in logs.'});
+      res.status(502).json({message:error.code==='EAUTH'?'Mail.com did not accept this credential. Check htafl@africamail.com has SMTP access and use the account’s application-specific password if required. No settings were changed.':'The connection or save could not be completed. Check connectivity and try again. Credentials are never shown in logs.'});
     }finally{transport.close();busy=false;}
   });
   app.use((err,req,res,next)=>{res.status(400).json({message:'The setup request could not be read.'});});
@@ -87,7 +86,7 @@ export function createEmailSetup(options={}){
 if(process.argv[1] && path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   let shutdown;
   const app=createEmailSetup();
-  const server=app.listen(0,'127.0.0.1',()=>console.log(`Private email and administrator setup: http://127.0.0.1:${server.address().port}/`));
+  const server=app.listen(Number(process.env.EMAIL_SETUP_PORT || 0),'127.0.0.1',()=>console.log(`Private email and administrator setup: http://127.0.0.1:${server.address().port}/`));
   shutdown=setTimeout(()=>server.close(),30*60000);
   server.once('close',()=>{clearTimeout(shutdown);console.log('Private email setup closed.');});
 }

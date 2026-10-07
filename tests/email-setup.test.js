@@ -21,10 +21,10 @@ test('local email setup rejects foreign origins/proxying and exposes no secret f
     assert.equal((await post('abcdefghijklmnop',{'X-Forwarded-Host':'public.example'})).status,403);
     assert.equal((await fetch(origin+'/.env')).status,404);
     assert.equal((await fetch(origin+'/server/index.js')).status,404);
-    assert.equal((await post('too-short')).status,422);assert.equal(calls,0);
+    assert.equal((await post('short')).status,422);assert.equal(calls,0);
   });
 });
-test('failed Gmail authentication preserves existing configuration and never echoes credentials',async()=>{
+test('failed mail.com authentication preserves existing configuration and never echoes credentials',async()=>{
   await fixture(()=>({verify:async()=>{throw Object.assign(new Error('private provider error'),{code:'EAUTH'});},close(){}}),async({post,configFile})=>{
     const original='ADMIN_USERNAME=keep-me\nSMTP_PASS=previous-private-value\n';await writeFile(configFile,original);
     const response=await post('abcdefghijklmnop');assert.equal(response.status,502);
@@ -32,12 +32,12 @@ test('failed Gmail authentication preserves existing configuration and never ech
     assert.equal(await readFile(configFile,'utf8'),original);
   });
 });
-test('successful setup saves only verified Gmail settings and preserves unrelated settings',async()=>{
+test('successful setup saves only verified mail.com settings and preserves unrelated settings',async()=>{
   let verified=false,closed=false;
-  await fixture(options=>{assert.equal(options.host,'smtp.gmail.com');assert.equal(options.secure,true);assert.equal(options.auth.user,'htaflco@gmail.com');assert.equal(options.logger,false);return{verify:async()=>{verified=true;},close(){closed=true;}};},async({post,configFile,origin})=>{
+  await fixture(options=>{assert.equal(options.host,'smtp.mail.com');assert.equal(options.secure,true);assert.equal(options.auth.user,'htafl@africamail.com');assert.equal(options.logger,false);return{verify:async()=>{verified=true;},close(){closed=true;}};},async({post,configFile,origin})=>{
     await writeFile(configFile,'PORT=4321\nADMIN_USERNAME=keep-me\nPUBLIC_ORIGIN=https://example.com\n');
-    const response=await post('abcd efgh ijkl mnop');assert.equal(response.status,200);assert.equal(verified,true);assert.equal(closed,true);
-    const config=parseEnv(await readFile(configFile,'utf8'));assert.equal(config.SMTP_PASS,'abcdefghijklmnop');assert.equal(config.SMTP_USER,'htaflco@gmail.com');assert.equal(config.PORT,'4321');assert.equal(config.ADMIN_USERNAME,'keep-me');assert.equal(config.PUBLIC_ORIGIN,'https://example.com');
+    const response=await post('smtp secret with spaces!');assert.equal(response.status,200);assert.equal(verified,true);assert.equal(closed,true);
+    const config=parseEnv(await readFile(configFile,'utf8'));assert.equal(config.SMTP_PASS,'smtp secret with spaces!');assert.equal(config.SMTP_USER,'htafl@africamail.com');assert.equal(config.PORT,'4321');assert.equal(config.ADMIN_USERNAME,'keep-me');assert.equal(config.PUBLIC_ORIGIN,'https://example.com');
     assert.ok(!(await response.text()).includes(config.SMTP_PASS));assert.equal((await post('abcdefghijklmnop')).status,409);
     assert.deepEqual(await fetch(origin+'/status').then(r=>r.json()),{saved:true,inbox:'htafl@africamail.com'});
   });

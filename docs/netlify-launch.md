@@ -20,11 +20,12 @@ the account; do not enable a paid upgrade or auto-recharge without owner approva
    installed and packaged by the Linux Netlify build; a Windows-built native
    dependency should not be uploaded as the Linux runtime.
 3. Add these through Netlify's private environment settings with Functions scope:
-   `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=465`, `SMTP_SECURE=true`,
-   `SMTP_USER=htaflco@gmail.com`, `SMTP_FROM=htaflco@gmail.com`, the verified
+   `SMTP_HOST=smtp.mail.com`, `SMTP_PORT=465`, `SMTP_SECURE=true`,
+   `SMTP_USER=htafl@africamail.com`, `SMTP_FROM=htafl@africamail.com`, the verified
    `SMTP_PASS`, `ADMIN_USERNAME`, `ADMIN_PASSWORD_HASH` and
    `COMMUNITY_REVIEWER=HTAFL owner`. All deliveries go to htafl@africamail.com;
-   Gmail is only the free sender. Copy the hash, never a plain admin passphrase.
+   Sending uses only that same mail.com account, once SMTP access is enabled.
+   Copy the hash, never a plain admin passphrase.
    Never upload `.env` as a public file or paste these secrets in chat.
 4. Set `PUBLIC_ORIGIN` to the actual HTTPS site origin, with Build and Functions
    scope. The build can also use Netlify's provided `URL`; runtime can use

@@ -8,10 +8,11 @@ import { fileURLToPath } from 'node:url';
 import {privateStorage,saveRecord,idPattern,listRecords,readRecord,readImage,writeImage,removeImage} from './storage.js';
 import {mountAdmin} from './admin.js';
 import {pathways,validateInvolvement,involvementMessage} from './involvement.js';
+import {emailAddress,emailConfigured,transportSettings} from './email-config.js';
 export {privateStorage,saveRecord,idPattern} from './storage.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-export const recipient = 'htafl@africamail.com';
+export const recipient = emailAddress;
 const categories = ['art', 'fashion', 'illustration', 'upcycling', 'photography'];
 const emailPattern = /^[^\s@<>\r\n]+@[^\s@<>\r\n]+\.[^\s@<>\r\n]+$/;
 const acceptedImageTypes = ['image/jpeg', 'image/png', 'image/webp'];
@@ -35,13 +36,11 @@ export function createApp(options = {}) {
   const app = express();
   const storage = privateStorage(options.storage);
   const maxUploadBytes=options.maxUploadBytes || 8*1024*1024;
-  const smtpConfigured = !!(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS);
+  const smtpConfigured = emailConfigured();
   const configured = options.mailReady ?? smtpConfigured;
-  const transport = configured && !options.sendMail ? nodemailer.createTransport({host:process.env.SMTP_HOST,
-    port:Number(process.env.SMTP_PORT || 465), secure:process.env.SMTP_SECURE !== 'false',
-    auth:{user:process.env.SMTP_USER,pass:process.env.SMTP_PASS}, connectionTimeout:15000, socketTimeout:20000}) : null;
+  const transport = configured && !options.sendMail ? nodemailer.createTransport({...transportSettings(),connectionTimeout:15000,socketTimeout:20000}) : null;
   const send = options.sendMail || (mail => transport.sendMail(mail));
-  const from = process.env.SMTP_FROM || process.env.SMTP_USER || recipient;
+  const from = recipient;
   app.disable('x-powered-by');
   if(options.trustProxy!==undefined)app.set('trust proxy',options.trustProxy);
   else if (process.env.TRUST_PROXY_HOPS) app.set('trust proxy', Number(process.env.TRUST_PROXY_HOPS));

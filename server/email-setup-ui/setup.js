@@ -19,7 +19,7 @@
   let pending=false;
   form.addEventListener('submit',async event=>{
     event.preventDefault();if(pending)return;
-    pending=true;button.disabled=true;input.disabled=true;form.setAttribute('aria-busy','true');status.textContent='Checking encrypted Gmail connection…';
+    pending=true;button.disabled=true;input.disabled=true;form.setAttribute('aria-busy','true');status.textContent='Checking encrypted mail.com connection…';
     let successful=false;
     try{
       const response=await fetch('/configure',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:input.value})});

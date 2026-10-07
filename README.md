@@ -27,8 +27,8 @@ Node server remains available; the filesystem/proxy notes below apply to that mo
   network and public address are supplied. No transfers are processed or
   automatically confirmed here. See [contribution details](docs/support-contributions.md).
 - Configure SMTP credentials in private host environment variables. All enquiries
-  and artwork notifications go to **htafl@africamail.com**. The existing Gmail account is used only as the free sender; use an App
-  Password with two-step verification or an appropriate SMTP service; never put
+  and artwork notifications go to **htafl@africamail.com**. Mail.com SMTP access must be enabled
+  for that account; use an application-specific password with two-factor authentication. Never put
   credentials in browser code or Git. Email remains explicitly unavailable until
   configured. Verify delivery with a controlled test before opening publicly.
 - Put `UPLOAD_DIR` on a private persistent volume, outside publicly served folders.
