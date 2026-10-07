@@ -77,8 +77,8 @@ Restrict host access and protect environment files and backups.
 The authenticated dashboard reports queue/storage/configuration state. Use the
 host readiness command to verify SMTP authentication, then make a controlled
 delivery test before public launch. The owner confirmed the local participation
-test was received. A deployed private upload notification was accepted by SMTP;
-live inbox receipt must also be confirmed.
+test was received. The owner also confirmed inbox receipt of the deployed private
+upload notification, and that the deployed administrator dashboard opens.
 
 ## Verification
 

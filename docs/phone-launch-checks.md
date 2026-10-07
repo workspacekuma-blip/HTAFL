@@ -2,7 +2,14 @@
 
 The owner has access to both Android and iPhone. Tests below must run on the actual
 phones against the final HTTPS Netlify address. Local viewport emulation does not
-count. No real-device result has been recorded yet.
+count. On 7 October 2026 the owner reported that both phones passed the menu,
+sideways-scrolling, resource-search and opening-a-form-from-Get-Involved checks
+on `https://htafl-890.netlify.app/`. Device models, OS/browser versions and the
+remaining checks have not been supplied or independently verified.
+
+The owner subsequently selected `https://htaflco.netlify.app` as the final site.
+Repeat the phone checks there; the reported results above belong to the initial
+`htafl-890` deployment and do not establish testing on the final address.
 
 Record the deployed URL, deployment ID, test date, phone model, OS and browser
 version, and pass/fail for each check. Do not record passwords or private artwork.
@@ -12,12 +19,15 @@ version, and pass/fail for each check. Do not record passwords or private artwor
 | HTTPS opens without a certificate warning | Pending | Pending |
 | Home, About, Create, Overcome and Community load | Pending | Pending |
 | Resources, Merchandise and all five involvement pathways load | Pending | Pending |
-| Portrait and landscape have no sideways overflow or clipped text | Pending | Pending |
-| Mobile menu opens, closes and restores page scrolling | Pending | Pending |
+| No sideways scrolling in the owner's tested view | Owner reports pass | Owner reports pass |
+| Mobile menu works in the owner's tested view | Owner reports pass | Owner reports pass |
+| Landscape, clipped text and scrolling restoration | Pending | Pending |
 | Background page stays still while the menu is open | Pending | Pending |
 | Research and social links open separately without losing the site | Pending | Pending |
-| Resources search/filter/reset and browser Back work | Pending | Pending |
-| Get Involved index contains no form; a pathway opens its own form | Pending | Pending |
+| Resource search works | Owner reports pass | Owner reports pass |
+| Resource filters/reset and browser Back work | Pending | Pending |
+| Opening a form from Get Involved works | Owner reports pass | Owner reports pass |
+| Get Involved index itself contains no form | Live HTTP check passes | Live HTTP check passes |
 | Onscreen keyboard leaves labels, errors and submit controls reachable | Pending | Pending |
 | Invalid enquiry identifies the field; corrected enquiry gets a real result | Pending | Pending |
 | Small owner-created JPEG/PNG selects, previews and uploads privately | Pending | Pending |

@@ -1,13 +1,22 @@
 # HTAFL website review — 7 October 2026
 
-**Local website, real email delivery and owner-confirmed administrator sign-in
-pass review. Live hosting/storage and actual-phone checks remain incomplete.** Branding, layout and copy were
+**The website is deployed on free Netlify HTTPS with verified private upload
+persistence, real email receipt and owner-confirmed live administrator sign-in.
+The owner also reported passing the basic checks on Android and iPhone.** Branding, layout and copy were
 preserved. No new reproducible website defect was found. The browser review
 previously assumed email was always unconfigured; its test now covers the live
 availability state and an isolated unavailable state without sending test-fixture
 messages through real SMTP.
 
 ## Current verification
+
+The table records the local review unless it explicitly names a live result.
+The final production address is `https://htaflco.netlify.app`. Its HTTPS,
+metadata, 15 public routes, private-file boundary and protected review endpoints
+pass direct live checks. Extended live browser runs were interrupted by transient
+network timeouts; they are not recorded as a completed deployed browser suite.
+Basic owner-reported phone/dashboard results initially belong to `htafl-890` and
+must be repeated at the final address.
 
 | Check | Result |
 | --- | --- |
@@ -36,24 +45,27 @@ was restarted to activate it. One previously owner-authorized participation test
 was accepted by SMTP; the owner explicitly confirmed receipt in the recipient
 inbox. No password is recorded here, in browser code or in Git.
 
-## Still required for public launch
+## Launch status and remaining operator checks
 
 1. Administrator access is configured. The owner confirmed that both local and
    deployed dashboards open. Reviewer: HTAFL owner. Keep credentials private.
 2. Complete and verify the new free Netlify deployment. The new site is
-   `https://htafl-890.netlify.app`, linked to the public GitHub source with private
+   `https://htaflco.netlify.app`, linked to the public GitHub source with private
    production settings saved. The Linux build succeeded; live HTTPS, HTTP
    redirection, 15 routes, canonical metadata and the private file boundary pass.
-   A private upload was converted and stored without publication. Verification
-   across redeploy and cleanup is in progress. See [Netlify launch](netlify-launch.md).
-3. Verify HTTPS, domain metadata, native-image execution and persistent private
-   Blobs on the deployed site. Test an upload across redeploy, approval and
-   withdrawal; arrange protected backups and expired-state housekeeping.
+   A private upload was converted and stored without publication, survived a
+   GitHub-triggered redeploy, and was withdrawn. Both record and image deletion
+   were confirmed. The owner confirmed the live email notification arrived.
+   See [Netlify launch](netlify-launch.md).
+3. Arrange protected backups, recovery testing and expired-state housekeeping.
+   These operator procedures are not automatically supplied by persistence.
 4. Confirm operational privacy/retention procedures and verified guardian consent
    before accepting children's personal submissions. A general consent checkbox
    is not a guardian-verification workflow. See [privacy operations](privacy-operations.md).
-5. Test the deployed site on the owner's actual iOS/Safari and Android/Chrome
-   devices using [phone launch checks](phone-launch-checks.md).
+5. The owner reported that menu, sideways scrolling, resource search and opening
+   an involvement form pass on both phones. Complete the remaining landscape,
+   assistive-technology, larger-text, image-selection and slow-network checks in
+   [phone launch checks](phone-launch-checks.md).
 
 Bank instructions remain owner-supplied and transfers are not automatically
 processed or confirmed. Crypto and merchandise are intentional coming-soon
@@ -61,8 +73,18 @@ states until their real details are supplied.
 
 ## Files changed in this review
 
-- `tests/browser-qa.cjs`: supports enabled live email and explicitly verifies the unavailable state with an isolated configuration response.
-- `docs/publication-readiness.md`, `docs/email-delivery.md`, `docs/netlify-launch.md`: current review evidence and confirmed local email activation.
+- `README.md`: live website and administrator status.
+- `docs/backend-tools.md`: live review setup and the Netlify shared-state distinction.
+- `docs/email-delivery.md`: confirmed local and deployed inbox receipt.
+- `docs/netlify-launch.md`: actual free deployment, HTTPS, private configuration,
+  GitHub integration and storage verification.
+- `docs/privacy-operations.md`: permission review, rights requests, retention and
+  deletion procedures assigned to the owner.
+- `docs/phone-launch-checks.md`: owner-reported basic phone results and the remaining
+  detailed real-device checklist.
+- `docs/publication-readiness.md`: this launch record.
+- `tests/browser-qa.cjs`: waits for the actual community availability response
+  before checking its submit button. No website design or behavior changed.
 
 Screenshots and working audit outputs are ignored under `test-results/`. The
 existing `.env` and private community storage remain excluded from Git.

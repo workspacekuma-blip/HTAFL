@@ -29,8 +29,8 @@ inbox/spam folder independently; SMTP acceptance alone does not prove receipt.
 Current local review: SMTP authentication passes, and an owner-authorized
 participation submission was received at htafl@africamail.com, confirmed by the
 owner. Administrator setup is saved and the owner confirmed local sign-in. The
-Netlify site has email enabled and accepted a private upload notification for
-delivery; its inbox receipt still needs owner confirmation. See [Netlify launch](netlify-launch.md).
+Netlify site has email enabled; the owner also confirmed receipt of the deployed
+private upload notification. See [Netlify launch](netlify-launch.md).
 Never publish `.env` or send passwords in chat.
 
 Official sources: [Google App Passwords](https://support.google.com/accounts/answer/185833),

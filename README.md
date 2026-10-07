@@ -17,7 +17,9 @@ Direct-file previews show the pages; forms and the approved gallery need Node.
 
 The selected free deployment is Netlify with Functions and private Blobs. See
 [Netlify launch instructions](docs/netlify-launch.md) for build, private environment
-settings, persistent uploads and HTTPS. It is prepared but not deployed. The local
+settings, persistent uploads and HTTPS. It is deployed at
+[htaflco.netlify.app](https://htaflco.netlify.app/); live upload persistence
+across redeployment and private withdrawal were verified. The local
 Node server remains available; the filesystem/proxy notes below apply to that mode.
 
 - Set `PUBLIC_ORIGIN` to the exact HTTPS website origin.
@@ -45,7 +47,8 @@ The owner is assigned to review community work. The private local
 `npm run email:setup` screen can save both verified sending credentials and a
 salted administrator hash without exposing passwords in chat. Restart or redeploy
 to activate them. The owner has saved the administrator credentials privately
-and confirmed that the local dashboard opens. Local email delivery is also verified.
+and confirmed that both local and deployed dashboards open. Local and deployed
+email receipt are verified. The owner reviews community uploads.
 
 The password-protected **Review Studio** at `/admin/` now provides private image
 review, approval, rejection/withdrawal and notification retries. Start with

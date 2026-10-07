@@ -4,14 +4,24 @@ The owner chose Netlify and asked for the best free option. The prepared target
 is its Free plan with modern Functions and private Blobs, retaining the static
 HTML/CSS/JavaScript frontend and shared Express backend. No paid plan, extra
 credit purchase or paid upgrade has been made. The owner authorized a new free
-site. `https://htafl-890.netlify.app` has been created in the HTAFL Free team,
+site, then selected the existing `https://htaflco.netlify.app` as the final target.
+The initial `https://htafl-890.netlify.app` was created in the HTAFL Free team,
 with automatic top-ups disabled. Its production mail/admin environment is saved,
 the public GitHub source is connected with a read-only deploy key and push webhook.
 A Linux production build succeeded. Public HTTPS, HTTP-to-HTTPS redirection,
 15 page routes, canonical metadata, the private file boundary and protected
 administrator API pass live checks. A private test upload was converted and
 stored in production Blobs, stayed unpublished, and sent its notification.
-Persistence across redeploy and test-data cleanup are being verified separately.
+The same private record and converted image survived the GitHub-triggered
+redeploy to commit `8c55cbb`. Withdrawal then deleted both, confirmed by protected
+storage reads. No test work entered the public gallery.
+
+The final existing `htaflco` site was then deployed successfully with the same
+verified production mail/admin settings and its own HTTPS origin. Public HTTPS,
+HTTP redirection, 15 routes, canonical metadata, unauthenticated admin protection
+and excluded private files pass there. A new private upload was converted, stored,
+excluded from the gallery and accepted for email notification. Final-site
+persistence across the next redeploy and withdrawal are being checked separately.
 
 Netlify currently lists a 300-credit monthly Free limit, including Functions and
 Blob storage. This is a limited free tier, not unlimited hosting. Check usage in
@@ -19,8 +29,9 @@ the account; do not enable a paid upgrade or auto-recharge without owner approva
 
 ## Deploy through the actual Netlify account
 
-1. Use the newly created site `https://htafl-890.netlify.app` and its Netlify
-   project `6a177d72-f16f-4aeb-bbfb-9455d9ef5956`.
+1. Use the owner's selected existing site `https://htaflco.netlify.app` and its
+   Netlify project `61194eef-4369-403b-8ff5-cba6e1e14435`. The generated `htafl-890`
+   site was the initial verification target, not the final destination.
    Local changes must reach the connected repository before Netlify can build them.
    Do not drag-and-drop `dist` alone: that would omit the backend Functions.
 2. Keep the Free plan. `netlify.toml` selects Node 24, `npm run build`, the isolated
@@ -98,8 +109,11 @@ Netlify account access and Free plan have been verified; site creation, private
 production configuration and Linux deployment succeeded. The owner saved the
 administrator passphrase privately and confirmed local sign-in. Live HTTPS and
 public/backend checks pass. The owner also confirmed that the live administrator
-dashboard opens. Actual-phone results and live notification inbox receipt are
-pending. Do not confuse these with local checks.
+dashboard opens and that the deployed upload notification reached
+`htafl@africamail.com`. The owner reported successful menu, sideways-scrolling,
+resource-search and involvement-form checks on both Android and iPhone. Additional
+real-device accessibility, landscape, image-selection and slow-network checks
+remain in [phone launch checks](phone-launch-checks.md).
 
 Official references: [Netlify pricing](https://www.netlify.com/pricing/),
 [modern Functions](https://docs.netlify.com/build/functions/api/),
